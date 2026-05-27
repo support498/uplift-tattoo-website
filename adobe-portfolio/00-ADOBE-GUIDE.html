@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UPLIFT — Adobe Portfolio Setup Guide</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0a; color: #e8e8e8; padding: 48px 24px; line-height: 1.6; }
+  .wrap { max-width: 860px; margin: 0 auto; }
+  h1 { font-size: 1.5rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 6px; }
+  .subtitle { font-size: .85rem; color: #666; margin-bottom: 48px; }
+  h2 { font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #555; margin: 40px 0 14px; }
+  h3 { font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #aaa; margin: 24px 0 8px; }
+  p { font-size: .9rem; color: #bbb; margin-bottom: 10px; }
+  .step { display: flex; gap: 16px; margin-bottom: 14px; align-items: flex-start; }
+  .step-n { background: #1a1a1a; border: 1px solid #333; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .75rem; font-weight: 700; color: #888; flex-shrink: 0; margin-top: 1px; }
+  .step-body { flex: 1; }
+  .step-title { font-size: .9rem; font-weight: 600; color: #ddd; }
+  .step-note { font-size: .8rem; color: #666; margin-top: 2px; }
+  .file-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; margin-top: 8px; }
+  .file-card { background: #111; border: 1px solid #222; border-radius: 4px; padding: 12px 14px; }
+  .file-name { font-size: .8rem; font-weight: 600; color: #ccc; font-family: 'SF Mono', Menlo, monospace; }
+  .file-desc { font-size: .75rem; color: #555; margin-top: 3px; }
+  .tip { background: #111; border-left: 3px solid #333; padding: 14px 16px; margin: 16px 0; border-radius: 0 4px 4px 0; }
+  .tip-label { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #555; margin-bottom: 5px; }
+  .tip p { margin: 0; font-size: .85rem; }
+  hr { border: none; border-top: 1px solid #1a1a1a; margin: 40px 0; }
+  .theme-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 10px; }
+  .theme-card { background: #111; border: 1px solid #222; border-radius: 4px; padding: 12px 14px; flex: 1; min-width: 140px; }
+  .theme-name { font-size: .85rem; font-weight: 600; color: #e8e8e8; }
+  .theme-why { font-size: .75rem; color: #555; margin-top: 3px; }
+  .rec { border-color: #fff; }
+  .rec .theme-name::after { content: ' ✓'; color: #888; font-size: .7rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>UPLIFT — Adobe Portfolio</h1>
+  <p class="subtitle">Setup guide for portfolio.adobe.com — artist showcase site alongside uplifttattoo.com</p>
+
+  <h2>What this site is for</h2>
+  <p>Adobe Portfolio is a clean, visual-first site that comes free with Creative Cloud. UPLIFT's Adobe Portfolio is an artist showcase — full-bleed gallery pages for each artist, with a booking CTA that links back to uplifttattoo.com. It is not a replacement for the Squarespace site.</p>
+  <p>Think of it as: <strong>Squarespace = service/SEO/booking site. Adobe Portfolio = visual portfolio and artist discovery.</strong></p>
+
+  <hr>
+
+  <h2>One-time setup (15 minutes)</h2>
+
+  <div class="step">
+    <div class="step-n">1</div>
+    <div class="step-body">
+      <div class="step-title">Go to portfolio.adobe.com</div>
+      <div class="step-note">Sign in with your Adobe Creative Cloud account. Click "Create Website."</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-n">2</div>
+    <div class="step-body">
+      <div class="step-title">Choose a theme</div>
+      <div class="step-note">See recommended themes below. Pick one before adding any content — changing themes later resets your layout.</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-n">3</div>
+    <div class="step-body">
+      <div class="step-title">Set site title and URL</div>
+      <div class="step-note">Site name: UPLIFT Tattoo &amp; Piercing — Artist Portfolios. Default URL: upliftnyc.myportfolio.com (or connect custom domain: portfolio.uplifttattoo.com)</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-n">4</div>
+    <div class="step-body">
+      <div class="step-title">Create one page per artist</div>
+      <div class="step-note">Use the copy from each artist file in this folder. Each page = gallery + short bio + "Book with [Name]" CTA.</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-n">5</div>
+    <div class="step-body">
+      <div class="step-title">Create a Cover / Home page</div>
+      <div class="step-note">Use home.html in this folder for copy. Add a hero image (studio shot or collage of work). Link to uplifttattoo.com.</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-n">6</div>
+    <div class="step-body">
+      <div class="step-title">Publish and add link to Squarespace</div>
+      <div class="step-note">Once live, add the Adobe Portfolio URL to the Squarespace footer nav under "Artists."</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>Recommended themes</h2>
+
+  <div class="theme-row">
+    <div class="theme-card rec">
+      <div class="theme-name">Alba</div>
+      <div class="theme-why">Clean, minimal, full-bleed images. Best for dark photo sets. Top pick for UPLIFT.</div>
+    </div>
+    <div class="theme-card rec">
+      <div class="theme-name">Bram</div>
+      <div class="theme-why">Dark background, single-column layout. Very editorial. Works well for fineline close-ups.</div>
+    </div>
+    <div class="theme-card">
+      <div class="theme-name">Slate</div>
+      <div class="theme-why">Grid-based, neutral. Good if you want all artists on one visual grid page.</div>
+    </div>
+    <div class="theme-card">
+      <div class="theme-name">Helios</div>
+      <div class="theme-why">Modern sans-serif headers. Good for mixed tattoo + piercing content.</div>
+    </div>
+  </div>
+
+  <div class="tip">
+    <div class="tip-label">Tip</div>
+    <p>Preview Alba and Bram with a dark studio photo before deciding. Both support full-bleed hero images which suit UPLIFT's aesthetic best.</p>
+  </div>
+
+  <hr>
+
+  <h2>Files in this folder</h2>
+
+  <div class="file-grid">
+    <div class="file-card">
+      <div class="file-name">home.html</div>
+      <div class="file-desc">Cover page — studio intro, CTA to uplifttattoo.com</div>
+    </div>
+    <div class="file-card">
+      <div class="file-name">artist-junh.html</div>
+      <div class="file-desc">Junh — fineline, butterflies, botanicals</div>
+    </div>
+    <div class="file-card">
+      <div class="file-name">artist-anastasia.html</div>
+      <div class="file-desc">Anastasia — micro-realism, fineline</div>
+    </div>
+    <div class="file-card">
+      <div class="file-name">artist-julia.html</div>
+      <div class="file-desc">Julia — micro-realism, detailed fineline</div>
+    </div>
+    <div class="file-card">
+      <div class="file-name">artist-kseniya.html</div>
+      <div class="file-desc">Kseniya — flowers, fineline botanicals</div>
+    </div>
+    <div class="file-card">
+      <div class="file-name">artist-val.html</div>
+      <div class="file-desc">Val — fineline, custom work</div>
+    </div>
+    <div class="file-card">
+      <div class="file-name">artist-elzhana.html</div>
+      <div class="file-desc">Elzhana — fineline, delicate work</div>
+    </div>
+    <div class="file-card">
+      <div class="file-name">artist-shannon.html</div>
+      <div class="file-desc">Shannon — fineline, custom designs</div>
+    </div>
+    <div class="file-card">
+      <div class="file-name">artist-alexzsunder.html</div>
+      <div class="file-desc">Alexzsunder — fineline, custom work</div>
+    </div>
+    <div class="file-card">
+      <div class="file-name">artist-drea.html</div>
+      <div class="file-desc">Drea — fineline, delicate designs</div>
+    </div>
+    <div class="file-card">
+      <div class="file-name">artist-alina.html</div>
+      <div class="file-desc">Alina — fineline, custom tattoos</div>
+    </div>
+    <div class="file-card">
+      <div class="file-name">artist-loian.html</div>
+      <div class="file-desc">Loian — fineline, delicate work</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>Image guidelines for Adobe Portfolio</h2>
+
+  <div class="step">
+    <div class="step-n">→</div>
+    <div class="step-body">
+      <div class="step-title">Per artist: 8–16 photos minimum</div>
+      <div class="step-note">Mix of healed work, fresh work, and close-up detail shots. Square or portrait orientation preferred.</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-n">→</div>
+    <div class="step-body">
+      <div class="step-title">File size: 2MB or under per image</div>
+      <div class="step-note">Adobe Portfolio resizes on upload but smaller files load faster.</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-n">→</div>
+    <div class="step-body">
+      <div class="step-title">No watermarks, no text overlays</div>
+      <div class="step-note">The portfolio theme handles labels. Clean photos only.</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-n">→</div>
+    <div class="step-body">
+      <div class="step-title">Cover/hero image per page</div>
+      <div class="step-note">One strong, high-contrast image for each artist's page hero. Often a close-up of their signature style.</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

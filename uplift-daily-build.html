@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UPLIFT Daily Build</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f4f2; min-height: 100vh; padding: 32px 20px; color: #1a1a1a; }
+    .page { max-width: 860px; margin: 0 auto; }
+    .header { margin-bottom: 32px; }
+    .header h1 { font-size: 1.5rem; font-weight: 700; letter-spacing: -.02em; }
+    .header .date-display { font-size: .85rem; color: #888; margin-top: 4px; }
+    .reset-btn { background: #1a1a1a; color: #fff; border: none; padding: 8px 18px; font-size: .8rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; cursor: pointer; border-radius: 2px; float: right; margin-top: -4px; }
+    .reset-btn:hover { background: #333; }
+    .progress-bar { background: #e0ddd8; height: 4px; border-radius: 2px; margin-bottom: 32px; overflow: hidden; }
+    .progress-fill { background: #1a1a1a; height: 100%; border-radius: 2px; transition: width .3s ease; }
+    .progress-label { font-size: .8rem; color: #888; margin-top: 6px; margin-bottom: 32px; }
+    .section { background: #fff; border-radius: 4px; margin-bottom: 20px; overflow: hidden; }
+    .section-header { padding: 16px 20px 14px; border-bottom: 1px solid #f0eeeb; display: flex; align-items: center; justify-content: space-between; }
+    .section-header h2 { font-size: .9rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #1a1a1a; }
+    .section-header .section-count { font-size: .8rem; color: #aaa; }
+    .task-list { padding: 8px 0; }
+    .task-item { display: flex; align-items: flex-start; padding: 10px 20px; gap: 12px; cursor: pointer; transition: background .1s; border-radius: 2px; }
+    .task-item:hover { background: #faf9f8; }
+    .task-item.done .task-label { color: #aaa; text-decoration: line-through; }
+    .task-item.done .task-note { color: #bbb; }
+    .checkbox { width: 18px; height: 18px; border: 2px solid #d0cdc8; border-radius: 3px; flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center; transition: all .15s; }
+    .task-item.done .checkbox { background: #1a1a1a; border-color: #1a1a1a; }
+    .checkbox svg { display: none; }
+    .task-item.done .checkbox svg { display: block; }
+    .task-text { flex: 1; }
+    .task-label { font-size: .9rem; line-height: 1.4; }
+    .task-note { font-size: .78rem; color: #999; margin-top: 2px; line-height: 1.35; }
+    .divider { height: 1px; background: #f5f4f2; margin: 0 20px; }
+    @media (max-width: 600px) {
+      body { padding: 20px 12px; }
+      .header h1 { font-size: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <div class="header">
+    <button class="reset-btn" onclick="resetAll()">Reset Day</button>
+    <h1>UPLIFT Daily Build</h1>
+    <div class="date-display" id="dateDisplay"></div>
+  </div>
+
+  <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+  <div class="progress-label" id="progressLabel">0 of 0 tasks complete</div>
+
+  <!-- MORNING OPEN -->
+  <div class="section">
+    <div class="section-header">
+      <h2>Morning Open</h2>
+      <span class="section-count" id="count-morning"></span>
+    </div>
+    <div class="task-list" id="section-morning">
+      <div class="task-item" onclick="toggle(this)">
+        <div class="checkbox"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="task-text"><div class="task-label">Confirm all appointments for today</div><div class="task-note">Text or call clients booked for today. Confirm time, placement idea, and any deposit.</div></div>
+      </div>
+      <div class="divider"></div>
+      <div class="task-item" onclick="toggle(this)">
+        <div class="checkbox"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="task-text"><div class="task-label">Confirm all appointments for tomorrow</div><div class="task-note">Send reminder to tomorrow's clients. Remind them to eat beforehand and bring ID.</div></div>
+      </div>
+      <div class="divider"></div>
+      <div class="task-item" onclick="toggle(this)">
+        <div class="checkbox"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="task-text"><div class="task-label">Check DMs and inquiries from overnight</div><div class="task-note">Instagram, website contact form, and any booking platform messages. Reply within first hour of open.</div></div>
+      </div>
+      <div class="divider"></div>
+      <div class="task-item" onclick="toggle(this)">
+        <div class="checkbox"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="task-text"><div class="task-label">Check artist availability and schedule</div><div class="task-note">Confirm which artists are in today. Flag any gaps or coverage needs.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLIENT FOLLOW-UP -->
+  <div class="section">
+    <div class="section-header">
+      <h2>Client Follow-Up</h2>
+      <span class="section-count" id="count-followup"></span>
+    </div>
+    <div class="task-list" id="section-followup">
+      <div class="task-item" onclick="toggle(this)">
+        <div class="checkbox"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="task-text"><div class="task-label">Follow up with yesterday's clients</div><div class="task-note">Check in on healing. Ask if they have any questions. This is the best window to ask for a Google review.</div></div>
+      </div>
+      <div class="divider"></div>
+      <div class="task-item" onclick="toggle(this)">
+        <div class="checkbox"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="task-text"><div class="task-label">Ask for Google review from healed clients (7-14 days out)</div><div class="task-note">Clients who got tattooed 1-2 weeks ago and are healing well. Send the review link directly.</div></div>
+      </div>
+      <div class="divider"></div>
+      <div class="task-item" onclick="toggle(this)">
+        <div class="checkbox"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="task-text"><div class="task-label">Follow up with open leads that have not booked</div><div class="task-note">Check the lead list. Anyone who inquired but did not book - send a short, friendly follow-up. Offer a time slot.</div></div>
+      </div>
+      <div class="divider"></div>
+      <div class="task-item" onclick="toggle(this)">
+        <div class="checkbox"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="task-text"><div class="task-label">Log any new client info in the CRM</div><div class="task-note">Name, idea, budget, artist, status, and next follow-up date. Keep the pipeline current.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENT AND SOCIAL -->
+  <div class="section">
+    <div class="section-header">
+      <h2>Content and Social</h2>
+      <span class="section-count" id="count-content"></span>
+    </div>
+    <div class="task-list" id="section-content">
+      <div class="task-item" onclick="toggle(this)">
+        <div class="checkbox"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="task-text"><div class="task-label">Collect content from artists (photos/videos of today's work)</div><div class="task-note">Artists should submit 2-3 photos per client. Remind at end of shift. Do not let media sit in DMs.</div></div>
+      </div>
+      <div class="divider"></div>
+      <div class="task-item" onclick="toggle(this)">
+        <div class="checkbox"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="task-text"><div class="task-label">Post or schedule at least 1 piece of content to Instagram</div><div class="task-note">Story or feed post. Use saved content from the folder. Prioritize recent client work. Include walk-in CTA when relevant.</div></div>
+      </div>
+      <div class="divider"></div>
+      <div class="task-item" onclick="toggle(this)">
+        <div class="checkbox"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="task-text"><div class="task-label">Publish or schedule the next blog post to Squarespace</div><div class="task-note">Blog posts are built and ready. Copy the HTML from the /blog folder into a Squarespace Code Block. One post per week minimum. See blog calendar for schedule.</div></div>
+      </div>
+      <div class="divider"></div>
+      <div class="task-item" onclick="toggle(this)">
+        <div class="checkbox"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="task-text"><div class="task-label">Reply to Instagram comments and DMs</div><div class="task-note">Keep response time under 2 hours on weekdays. Every unanswered DM is a potential booking lost.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOOKINGS AND ADMIN -->
+  <div class="section">
+    <div class="section-header">
+      <h2>Bookings and Admin</h2>
+      <span class="section-count" id="count-admin"></span>
+    </div>
+    <div class="task-list" id="section-admin">
+      <div class="task-item" onclick="toggle(this)">
+        <div class="checkbox"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="task-text"><div class="task-label">Process any new booking deposits received</div><div class="task-note">Confirm receipt. Log client details. Ensure appointment is correctly added to the calendar.</div></div>
+      </div>
+      <div class="divider"></div>
+      <div class="task-item" onclick="toggle(this)">
+        <div class="checkbox"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="task-text"><div class="task-label">Check the next 7 days of appointments for gaps or issues</div><div class="task-note">Flag any days that are under-booked. Flag any confirmed appointments without deposit if deposit is required.</div></div>
+      </div>
+      <div class="divider"></div>
+      <div class="task-item" onclick="toggle(this)">
+        <div class="checkbox"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="task-text"><div class="task-label">Handle any reschedule or cancellation requests</div><div class="task-note">Reschedule first when possible. Apply deposit transfer policy. Offer an alternative date immediately.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ARTIST AND TEAM -->
+  <div class="section">
+    <div class="section-header">
+      <h2>Artist and Team</h2>
+      <span class="section-count" id="count-artist"></span>
+    </div>
+    <div class="task-list" id="section-artist">
+      <div class="task-item" onclick="toggle(this)">
+        <div class="checkbox"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="task-text"><div class="task-label">Confirm artist schedules for the week</div><div class="task-note">Ensure all artists know their days, appointment load, and any walk-in availability for the week.</div></div>
+      </div>
+      <div class="divider"></div>
+      <div class="task-item" onclick="toggle(this)">
+        <div class="checkbox"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="task-text"><div class="task-label">Any outreach to guest artists or new artist inquiries</div><div class="task-note">Follow up with any artists in conversation for guest spots or onboarding. Keep pipeline moving.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLOSE OF DAY -->
+  <div class="section">
+    <div class="section-header">
+      <h2>End of Day</h2>
+      <span class="section-count" id="count-close"></span>
+    </div>
+    <div class="task-list" id="section-close">
+      <div class="task-item" onclick="toggle(this)">
+        <div class="checkbox"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="task-text"><div class="task-label">Confirm all today's clients received aftercare instructions</div><div class="task-note">Every client out the door should have written or verbal aftercare before leaving.</div></div>
+      </div>
+      <div class="divider"></div>
+      <div class="task-item" onclick="toggle(this)">
+        <div class="checkbox"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="task-text"><div class="task-label">Pull and save today's client photos from artists</div><div class="task-note">Transfer to content folder before end of day. Photos that sit in DMs are photos that get lost.</div></div>
+      </div>
+      <div class="divider"></div>
+      <div class="task-item" onclick="toggle(this)">
+        <div class="checkbox"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="task-text"><div class="task-label">Update the lead log with today's new inquiries</div><div class="task-note">Log name, idea, budget estimate, artist interest, and status. Set follow-up date.</div></div>
+      </div>
+      <div class="divider"></div>
+      <div class="task-item" onclick="toggle(this)">
+        <div class="checkbox"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="task-text"><div class="task-label">Review tomorrow's schedule - any prep needed?</div><div class="task-note">Check for custom pieces that need design review, deposits not yet received, or any appointment note flags.</div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // Set date
+  const d = new Date();
+  document.getElementById('dateDisplay').textContent = d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+
+  // Storage key includes date so it auto-resets each day
+  const storageKey = 'uplift-ops-' + d.toISOString().split('T')[0];
+
+  const sections = ['morning','followup','content','admin','artist','close'];
+
+  function getAllTasks() {
+    return document.querySelectorAll('.task-item');
+  }
+
+  function updateProgress() {
+    const all = getAllTasks();
+    const done = document.querySelectorAll('.task-item.done');
+    const pct = all.length ? Math.round((done.length / all.length) * 100) : 0;
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('progressLabel').textContent = done.length + ' of ' + all.length + ' tasks complete';
+
+    // Update section counts
+    sections.forEach(s => {
+      const sec = document.getElementById('section-' + s);
+      if (!sec) return;
+      const total = sec.querySelectorAll('.task-item').length;
+      const doneCount = sec.querySelectorAll('.task-item.done').length;
+      const el = document.getElementById('count-' + s);
+      if (el) el.textContent = doneCount + ' / ' + total;
+    });
+
+    saveState();
+  }
+
+  function toggle(el) {
+    el.classList.toggle('done');
+    updateProgress();
+  }
+
+  function saveState() {
+    const tasks = getAllTasks();
+    const state = [];
+    tasks.forEach((t, i) => state.push(t.classList.contains('done') ? 1 : 0));
+    localStorage.setItem(storageKey, JSON.stringify(state));
+  }
+
+  function loadState() {
+    const saved = localStorage.getItem(storageKey);
+    if (!saved) return;
+    const state = JSON.parse(saved);
+    const tasks = getAllTasks();
+    tasks.forEach((t, i) => {
+      if (state[i]) t.classList.add('done');
+    });
+  }
+
+  function resetAll() {
+    getAllTasks().forEach(t => t.classList.remove('done'));
+    localStorage.removeItem(storageKey);
+    updateProgress();
+  }
+
+  loadState();
+  updateProgress();
+</script>
+</body>
+</html>
