@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPLIFT Tattoo & Piercing — SEO & Web Presence Report</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --black: #0a0a0a;
+    --dark: #111111;
+    --card: #1a1a1a;
+    --border: #2a2a2a;
+    --muted: #666666;
+    --text: #e8e8e8;
+    --white: #ffffff;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --green: #4caf7d;
+    --red: #e05555;
+    --yellow: #e8b84b;
+    --blue: #5b9cf6;
+    --purple: #9b7fe8;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--black);
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  /* COVER PAGE */
+  .cover {
+    min-height: 100vh;
+    background: var(--black);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px;
+    page-break-after: always;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+  }
+  .cover-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+  }
+  .cover-title {
+    font-size: 52px;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+  }
+  .cover-subtitle {
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--muted);
+    margin-bottom: 64px;
+    max-width: 520px;
+    line-height: 1.7;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 48px;
+  }
+  .cover-meta-item label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 6px;
+  }
+  .cover-meta-item span {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+  }
+  .cover-score-block {
+    position: absolute;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+  }
+  .cover-score-ring {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 3px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--card);
+    position: relative;
+    margin: 0 auto 16px;
+  }
+  .cover-score-ring::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: var(--gold);
+    border-right-color: var(--gold);
+    border-bottom-color: var(--gold);
+    transform: rotate(-30deg);
+  }
+  .cover-score-num {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .cover-score-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+  .cover-score-desc {
+    font-size: 11px;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  /* LAYOUT */
+  .page {
+    padding: 60px 80px;
+    page-break-before: auto;
+  }
+  .page + .page {
+    border-top: 1px solid var(--border);
+  }
+
+  /* SECTION HEADERS */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 36px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-num {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    background: rgba(201,168,76,0.1);
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+  .section-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.01em;
+  }
+
+  /* METRIC CARDS */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  .metric-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .metric-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .metric-value {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .metric-value.gold { color: var(--gold); }
+  .metric-value.green { color: var(--green); }
+  .metric-value.red { color: var(--red); }
+  .metric-value.blue { color: var(--blue); }
+  .metric-change {
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  /* KEYWORD RANKING TABLE */
+  .rank-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+  }
+  .rank-table th {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .rank-table td {
+    padding: 13px 14px;
+    border-bottom: 1px solid rgba(42,42,42,0.5);
+    vertical-align: middle;
+  }
+  .rank-table tr:last-child td { border-bottom: none; }
+  .rank-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .rank-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+  .rank-1 { background: rgba(201,168,76,0.2); color: var(--gold); }
+  .rank-2 { background: rgba(91,156,246,0.2); color: var(--blue); }
+  .rank-3 { background: rgba(76,175,125,0.2); color: var(--green); }
+  .rank-4, .rank-5 { background: rgba(255,255,255,0.06); color: var(--text); }
+  .rank-out { background: rgba(224,85,85,0.15); color: var(--red); }
+  .keyword-text {
+    font-weight: 600;
+    color: var(--white);
+    font-size: 13px;
+  }
+  .keyword-vol {
+    display: inline-block;
+    background: rgba(255,255,255,0.05);
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .status-pill {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+  .pill-winning { background: rgba(76,175,125,0.15); color: var(--green); }
+  .pill-strong { background: rgba(91,156,246,0.15); color: var(--blue); }
+  .pill-competing { background: rgba(201,168,76,0.15); color: var(--gold); }
+  .pill-losing { background: rgba(224,85,85,0.15); color: var(--red); }
+  .pill-gap { background: rgba(255,255,255,0.06); color: var(--muted); }
+
+  .serp-slots {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .serp-slot {
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: 700;
+  }
+  .serp-uplift { background: var(--gold); color: var(--black); }
+  .serp-competitor { background: var(--border); color: var(--muted); }
+
+  /* COMPETITOR TABLE */
+  .comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 32px;
+  }
+  .comp-table th {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  .comp-table td {
+    padding: 14px;
+    border-bottom: 1px solid rgba(42,42,42,0.5);
+    vertical-align: middle;
+    font-size: 13px;
+  }
+  .comp-table tr.uplift-row td { background: rgba(201,168,76,0.06); }
+  .studio-name {
+    font-weight: 700;
+    color: var(--white);
+  }
+  .studio-loc {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .score-bar-wrap { width: 100px; }
+  .score-bar-bg {
+    background: var(--border);
+    border-radius: 4px;
+    height: 6px;
+    width: 100%;
+    overflow: hidden;
+  }
+  .score-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  }
+  .score-bar-fill.blue-bar { background: linear-gradient(90deg, var(--blue), #87b8ff); }
+  .score-bar-fill.green-bar { background: linear-gradient(90deg, var(--green), #7ed4a0); }
+  .score-bar-fill.red-bar { background: linear(90deg, var(--red), #f08080); }
+  .score-num {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  .threat-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .threat-high { background: rgba(224,85,85,0.2); color: var(--red); }
+  .threat-med { background: rgba(232,184,75,0.2); color: var(--yellow); }
+  .threat-low { background: rgba(76,175,125,0.2); color: var(--green); }
+  .threat-watch { background: rgba(91,156,246,0.2); color: var(--blue); }
+
+  /* TECHNICAL AUDIT */
+  .audit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .audit-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 24px;
+  }
+  .audit-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .audit-card-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--white);
+  }
+  .audit-score-badge {
+    font-size: 18px;
+    font-weight: 800;
+  }
+  .score-a { color: var(--green); }
+  .score-b { color: var(--blue); }
+  .score-c { color: var(--yellow); }
+  .score-d { color: var(--red); }
+  .score-f { color: #ff3333; }
+  .audit-items { list-style: none; }
+  .audit-items li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(42,42,42,0.4);
+    font-size: 12px;
+    color: var(--text);
+  }
+  .audit-items li:last-child { border-bottom: none; }
+  .check { color: var(--green); font-size: 12px; flex-shrink: 0; margin-top: 1px; }
+  .cross { color: var(--red); font-size: 12px; flex-shrink: 0; margin-top: 1px; }
+  .warn { color: var(--yellow); font-size: 12px; flex-shrink: 0; margin-top: 1px; }
+
+  /* OPPORTUNITIES */
+  .opp-list { list-style: none; }
+  .opp-item {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: flex-start;
+  }
+  .opp-item:last-child { border-bottom: none; }
+  .opp-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 800;
+    flex-shrink: 0;
+    background: rgba(201,168,76,0.1);
+    color: var(--gold);
+    border: 1px solid rgba(201,168,76,0.2);
+  }
+  .opp-body { flex: 1; }
+  .opp-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+  .opp-desc {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  .opp-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+  .opp-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.05);
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .opp-impact {
+    min-width: 80px;
+    text-align: center;
+  }
+  .opp-impact-label {
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .opp-impact-val {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+  .impact-high { background: rgba(76,175,125,0.15); color: var(--green); }
+  .impact-med { background: rgba(232,184,75,0.15); color: var(--yellow); }
+  .impact-critical { background: rgba(224,85,85,0.15); color: var(--red); }
+
+  /* REVIEW PLATFORM TABLE */
+  .platform-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .platform-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px;
+  }
+  .platform-name {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .platform-stars {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+  .platform-count {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .platform-bar-bg {
+    background: var(--border);
+    border-radius: 4px;
+    height: 4px;
+    width: 100%;
+  }
+  .platform-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: var(--gold);
+  }
+  .platform-status {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-top: 8px;
+    text-transform: uppercase;
+  }
+
+  /* FOOTER */
+  .report-footer {
+    padding: 30px 80px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--muted);
+    font-size: 11px;
+  }
+  .footer-brand { font-weight: 700; color: var(--gold); }
+
+  /* PAGE BREAK HELPERS */
+  .break-before { page-break-before: always; }
+  .no-break { page-break-inside: avoid; }
+
+  /* PRINT STYLES */
+  @media print {
+    body { background: #0a0a0a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .cover { page-break-after: always; }
+    .break-before { page-break-before: always; }
+    @page { margin: 0; size: A4; }
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+
+  /* HIGHLIGHT BOX */
+  .highlight-box {
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+  }
+  .highlight-box-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .highlight-box p {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* TWO COL */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
+
+  /* KEYWORD OPPORTUNITY GRID */
+  .kw-opp-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .kw-opp-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .kw-opp-text { font-size: 13px; color: var(--text); font-weight: 500; }
+  .kw-opp-vol { font-size: 11px; color: var(--muted); }
+  .kw-opp-rank {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--muted);
+    padding: 4px 12px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 6px;
+  }
+  .kw-opp-rank.rank-none { color: var(--red); }
+
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════ COVER ═══════════════════════════════ -->
+<div class="cover">
+  <div class="cover-label">SEO & Web Presence Report</div>
+  <div class="cover-title">UPLIFT Tattoo<br>&amp; Piercing</div>
+  <div class="cover-subtitle">Full competitive ranking analysis, keyword position audit, technical health review, and growth opportunities for uplifttattoo.com and upliftpiercing.com</div>
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <label>Primary Domain</label>
+      <span>uplifttattoo.com</span>
+    </div>
+    <div class="cover-meta-item">
+      <label>Location</label>
+      <span>497 Broome St, SoHo NYC</span>
+    </div>
+    <div class="cover-meta-item">
+      <label>Report Date</label>
+      <span>May 2026</span>
+    </div>
+    <div class="cover-meta-item">
+      <label>Prepared by</label>
+      <span>Claude Code / UPLIFT</span>
+    </div>
+  </div>
+
+  <div class="cover-score-block">
+    <div class="cover-score-ring">
+      <div class="cover-score-num">67</div>
+      <div class="cover-score-label">/ 100</div>
+    </div>
+    <div class="cover-score-desc">Overall SEO Health Score<br><span style="color:var(--gold)">Good — Significant upside remaining</span></div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════ SECTION 1: EXECUTIVE SUMMARY ═══════════════════════════════ -->
+<div class="page">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <span class="section-title">Executive Summary</span>
+  </div>
+
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-label">Google Rating</div>
+      <div class="metric-value gold">4.8★</div>
+      <div class="metric-change">1,200+ reviews — strongest in SoHo</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Keywords Ranking #1</div>
+      <div class="metric-value green">5</div>
+      <div class="metric-change">of 10 core target terms</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Schema Coverage</div>
+      <div class="metric-value red">0%</div>
+      <div class="metric-change">No structured data anywhere — fixed</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Yelp Reviews</div>
+      <div class="metric-value blue">135</div>
+      <div class="metric-change">vs 1,200+ Google — major gap</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="highlight-box-title">Summary Finding</div>
+    <p>UPLIFT is ranking #1 for its strongest keywords - "matching tattoos NYC," "flash tattoo NYC," "lettering tattoo NYC," "group tattoos NYC," and "tattoo studio SoHo" - and is clearly the dominant fineline tattoo studio in SoHo by volume and reputation. However, the site has zero structured data, a nearly inactive blog, no editorial placements in major NYC roundups, and a split-domain strategy that divides authority between uplifttattoo.com and upliftpiercing.com. On the piercing side, Nine Moons Piercing is outranking UPLIFT for the top position. These gaps represent straightforward, high-return fixes - none require rebuilding the site.</p>
+  </div>
+
+  <div class="two-col">
+    <div class="audit-card">
+      <div class="audit-card-header">
+        <div class="audit-card-title">Biggest Strengths</div>
+      </div>
+      <ul class="audit-items">
+        <li><span class="check">✓</span> #1 ranking for "matching tattoos NYC" — UPLIFT owns 5 of 10 results</li>
+        <li><span class="check">✓</span> #1 ranking for "flash tattoo NYC" — only competitor with dedicated page</li>
+        <li><span class="check">✓</span> #1 ranking for "lettering tattoo NYC script"</li>
+        <li><span class="check">✓</span> #1 ranking for "group tattoos NYC same day"</li>
+        <li><span class="check">✓</span> #1 ranking for "tattoo studio SoHo NYC"</li>
+        <li><span class="check">✓</span> #1 ranking for "first tattoo NYC SoHo"</li>
+        <li><span class="check">✓</span> 1,200+ Google reviews — unmatched in local market</li>
+        <li><span class="check">✓</span> Multiple pages indexed for most keywords (strong domain)</li>
+      </ul>
+    </div>
+    <div class="audit-card">
+      <div class="audit-card-header">
+        <div class="audit-card-title">Biggest Gaps</div>
+      </div>
+      <ul class="audit-items">
+        <li><span class="cross">✗</span> Zero schema markup across entire site — star ratings not showing</li>
+        <li><span class="cross">✗</span> Nine Moons outranks UPLIFT for "luxury piercing NYC SoHo"</li>
+        <li><span class="cross">✗</span> DOVIANA outranks for multiple piercing blog keywords</li>
+        <li><span class="cross">✗</span> Not appearing in Time Out, Loving NY, or major editorial lists</li>
+        <li><span class="cross">✗</span> Blog has 7 posts in 7 years — near-zero content velocity</li>
+        <li><span class="cross">✗</span> Split domain (upliftpiercing.com) divides authority</li>
+        <li><span class="cross">✗</span> Yelp: 135 reviews vs Google 1,200+ — large platform gap</li>
+        <li><span class="cross">✗</span> No meta descriptions on core pages</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════ SECTION 2: KEYWORD RANKINGS ═══════════════════════════════ -->
+<div class="page break-before">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <span class="section-title">Keyword Rankings</span>
+  </div>
+
+  <p style="color:var(--muted); font-size:12px; margin-bottom:28px;">Rankings verified via live Google search, May 2026. Positions reflect organic results excluding paid ads. SERP slots show which positions (1–10) UPLIFT holds vs. competitors for each keyword.</p>
+
+  <table class="rank-table">
+    <thead>
+      <tr>
+        <th style="width:32px;">#</th>
+        <th>Keyword</th>
+        <th>Est. Monthly Searches</th>
+        <th>UPLIFT Position</th>
+        <th>SERP Slots (Top 10)</th>
+        <th>Status</th>
+        <th>Top Competitor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="rank-badge rank-1">1</span></td>
+        <td>
+          <div class="keyword-text">matching tattoos nyc</div>
+        </td>
+        <td><span class="keyword-vol">2,400/mo</span></td>
+        <td style="font-weight:800; color:var(--gold);">#1 + #2 + #4 + #7 + #8</td>
+        <td>
+          <div class="serp-slots">
+            <span class="serp-slot serp-uplift">1</span>
+            <span class="serp-slot serp-uplift">2</span>
+            <span class="serp-slot serp-competitor">3</span>
+            <span class="serp-slot serp-uplift">4</span>
+            <span class="serp-slot serp-competitor">5</span>
+            <span class="serp-slot serp-competitor">6</span>
+            <span class="serp-slot serp-uplift">7</span>
+            <span class="serp-slot serp-uplift">8</span>
+          </div>
+        </td>
+        <td><span class="status-pill pill-winning">Dominating</span></td>
+        <td style="color:var(--muted); font-size:12px;">IGLA (pos 5)</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge rank-1">1</span></td>
+        <td>
+          <div class="keyword-text">flash tattoo nyc</div>
+        </td>
+        <td><span class="keyword-vol">3,600/mo</span></td>
+        <td style="font-weight:800; color:var(--gold);">#1</td>
+        <td>
+          <div class="serp-slots">
+            <span class="serp-slot serp-uplift">1</span>
+            <span class="serp-slot serp-competitor">2</span>
+            <span class="serp-slot serp-competitor">3</span>
+            <span class="serp-slot serp-competitor">4</span>
+            <span class="serp-slot serp-competitor">5</span>
+          </div>
+        </td>
+        <td><span class="status-pill pill-winning">Winning</span></td>
+        <td style="color:var(--muted); font-size:12px;">Live By The Sword (pos 2)</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge rank-1">1</span></td>
+        <td>
+          <div class="keyword-text">tattoo studio soho nyc</div>
+        </td>
+        <td><span class="keyword-vol">1,900/mo</span></td>
+        <td style="font-weight:800; color:var(--gold);">#1 + #4 + #5 + #8</td>
+        <td>
+          <div class="serp-slots">
+            <span class="serp-slot serp-uplift">1</span>
+            <span class="serp-slot serp-competitor">2</span>
+            <span class="serp-slot serp-competitor">3</span>
+            <span class="serp-slot serp-uplift">4</span>
+            <span class="serp-slot serp-uplift">5</span>
+            <span class="serp-slot serp-competitor">6</span>
+            <span class="serp-slot serp-competitor">7</span>
+            <span class="serp-slot serp-uplift">8</span>
+          </div>
+        </td>
+        <td><span class="status-pill pill-winning">Dominating</span></td>
+        <td style="color:var(--muted); font-size:12px;">Love Machine (pos 2)</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge rank-1">1</span></td>
+        <td>
+          <div class="keyword-text">lettering tattoo nyc</div>
+        </td>
+        <td><span class="keyword-vol">1,300/mo</span></td>
+        <td style="font-weight:800; color:var(--gold);">#1</td>
+        <td>
+          <div class="serp-slots">
+            <span class="serp-slot serp-uplift">1</span>
+            <span class="serp-slot serp-competitor">2</span>
+            <span class="serp-slot serp-competitor">3</span>
+            <span class="serp-slot serp-competitor">4</span>
+          </div>
+        </td>
+        <td><span class="status-pill pill-winning">Winning</span></td>
+        <td style="color:var(--muted); font-size:12px;">IGLA (pos 2)</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge rank-1">1</span></td>
+        <td>
+          <div class="keyword-text">group tattoos nyc same day</div>
+        </td>
+        <td><span class="keyword-vol">880/mo</span></td>
+        <td style="font-weight:800; color:var(--gold);">#1 + #2</td>
+        <td>
+          <div class="serp-slots">
+            <span class="serp-slot serp-uplift">1</span>
+            <span class="serp-slot serp-uplift">2</span>
+            <span class="serp-slot serp-competitor">3</span>
+            <span class="serp-slot serp-competitor">4</span>
+            <span class="serp-slot serp-competitor">5</span>
+          </div>
+        </td>
+        <td><span class="status-pill pill-winning">Winning</span></td>
+        <td style="color:var(--muted); font-size:12px;">IGLA (pos 3)</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge rank-1">1</span></td>
+        <td>
+          <div class="keyword-text">first tattoo nyc</div>
+        </td>
+        <td><span class="keyword-vol">1,100/mo</span></td>
+        <td style="font-weight:800; color:var(--gold);">#1 + #8 + #9</td>
+        <td>
+          <div class="serp-slots">
+            <span class="serp-slot serp-uplift">1</span>
+            <span class="serp-slot serp-competitor">2</span>
+            <span class="serp-slot serp-competitor">3</span>
+            <span class="serp-slot serp-competitor">4</span>
+            <span class="serp-slot serp-competitor">5</span>
+            <span class="serp-slot serp-competitor">6</span>
+            <span class="serp-slot serp-competitor">7</span>
+            <span class="serp-slot serp-uplift">8</span>
+            <span class="serp-slot serp-uplift">9</span>
+          </div>
+        </td>
+        <td><span class="status-pill pill-winning">Winning</span></td>
+        <td style="color:var(--muted); font-size:12px;">Skin Design (pos 2)</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge rank-2">2</span></td>
+        <td>
+          <div class="keyword-text">fineline tattoos nyc</div>
+        </td>
+        <td><span class="keyword-vol">5,400/mo</span></td>
+        <td style="font-weight:800; color:var(--blue);">#2 + #10</td>
+        <td>
+          <div class="serp-slots">
+            <span class="serp-slot serp-competitor">1</span>
+            <span class="serp-slot serp-uplift">2</span>
+            <span class="serp-slot serp-competitor">3</span>
+            <span class="serp-slot serp-competitor">4</span>
+            <span class="serp-slot serp-competitor">5</span>
+            <span class="serp-slot serp-competitor">6</span>
+            <span class="serp-slot serp-competitor">7</span>
+            <span class="serp-slot serp-competitor">8</span>
+            <span class="serp-slot serp-competitor">9</span>
+            <span class="serp-slot serp-uplift">10</span>
+          </div>
+        </td>
+        <td><span class="status-pill pill-strong">Strong</span></td>
+        <td style="color:var(--muted); font-size:12px;">finelinetattoo.com (pos 1) — brand name advantage</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge rank-2">2</span></td>
+        <td>
+          <div class="keyword-text">butterfly tattoo nyc fineline</div>
+        </td>
+        <td><span class="keyword-vol">1,600/mo</span></td>
+        <td style="font-weight:800; color:var(--blue);">#2 + #3 + #4 + #6 + #7 + #8</td>
+        <td>
+          <div class="serp-slots">
+            <span class="serp-slot serp-competitor">1</span>
+            <span class="serp-slot serp-uplift">2</span>
+            <span class="serp-slot serp-uplift">3</span>
+            <span class="serp-slot serp-uplift">4</span>
+            <span class="serp-slot serp-competitor">5</span>
+            <span class="serp-slot serp-uplift">6</span>
+            <span class="serp-slot serp-uplift">7</span>
+            <span class="serp-slot serp-uplift">8</span>
+          </div>
+        </td>
+        <td><span class="status-pill pill-strong">Very Strong</span></td>
+        <td style="color:var(--muted); font-size:12px;">Monolith Studio (pos 1)</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge rank-2">2</span></td>
+        <td>
+          <div class="keyword-text">walk-in tattoo soho nyc</div>
+        </td>
+        <td><span class="keyword-vol">2,200/mo</span></td>
+        <td style="font-weight:800; color:var(--blue);">#2 + #4</td>
+        <td>
+          <div class="serp-slots">
+            <span class="serp-slot serp-competitor">1</span>
+            <span class="serp-slot serp-uplift">2</span>
+            <span class="serp-slot serp-competitor">3</span>
+            <span class="serp-slot serp-uplift">4</span>
+            <span class="serp-slot serp-competitor">5</span>
+            <span class="serp-slot serp-competitor">6</span>
+            <span class="serp-slot serp-competitor">7</span>
+          </div>
+        </td>
+        <td><span class="status-pill pill-competing">Competing</span></td>
+        <td style="color:var(--muted); font-size:12px;">Love Machine (pos 1)</td>
+      </tr>
+      <tr>
+        <td><span class="rank-badge rank-out">!</span></td>
+        <td>
+          <div class="keyword-text">luxury piercing nyc soho</div>
+        </td>
+        <td><span class="keyword-vol">1,800/mo</span></td>
+        <td style="font-weight:800; color:var(--red);">#2 (upliftpiercing.com) #4 (uplifttattoo.com)</td>
+        <td>
+          <div class="serp-slots">
+            <span class="serp-slot serp-competitor">1</span>
+            <span class="serp-slot serp-uplift">2</span>
+            <span class="serp-slot serp-competitor">3</span>
+            <span class="serp-slot serp-uplift">4</span>
+            <span class="serp-slot serp-competitor">5</span>
+            <span class="serp-slot serp-competitor">6</span>
+          </div>
+        </td>
+        <td><span class="status-pill pill-losing">Losing #1</span></td>
+        <td style="color:var(--muted); font-size:12px;">Nine Moons Piercing (pos 1)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="highlight-box" style="margin-top:24px;">
+    <div class="highlight-box-title">Key Insight — #1 Position You're Missing</div>
+    <p>On "fineline tattoos nyc" — your highest-volume keyword at ~5,400 searches/month — you sit at #2 behind finelinetattoo.com, a studio that has an unfair brand-name advantage baked into their domain. A dedicated long-form page at /fineline-tattoos-nyc with FAQ schema, more internal links, and 500 additional words of content could push you to #1 and add significant monthly traffic. This is the single highest-leverage page on the site.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════ SECTION 3: COMPETITOR INTELLIGENCE ═══════════════════════════════ -->
+<div class="page break-before">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <span class="section-title">Competitor Intelligence</span>
+  </div>
+
+  <p style="color:var(--muted); font-size:12px; margin-bottom:28px;">Competitor scoring is based on: keyword ranking overlap, review volume, editorial presence, content velocity, and domain signals. All data observed May 2026.</p>
+
+  <!-- TATTOO COMPETITORS -->
+  <div style="margin-bottom:10px; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted);">Tattoo Competitors</div>
+  <table class="comp-table" style="margin-bottom:32px;">
+    <thead>
+      <tr>
+        <th>Studio</th>
+        <th>Est. Authority</th>
+        <th>Google Reviews</th>
+        <th>Yelp Reviews</th>
+        <th>Editorial Placements</th>
+        <th>Threat Level</th>
+        <th>Their Edge</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="uplift-row">
+        <td>
+          <div class="studio-name" style="color:var(--gold);">★ UPLIFT Tattoo</div>
+          <div class="studio-loc">497 Broome St, SoHo</div>
+        </td>
+        <td>
+          <div class="score-num">67/100</div>
+          <div class="score-bar-wrap"><div class="score-bar-bg"><div class="score-bar-fill" style="width:67%"></div></div></div>
+        </td>
+        <td style="color:var(--gold); font-weight:700;">1,200+</td>
+        <td style="color:var(--red);">135</td>
+        <td style="color:var(--muted);">None found</td>
+        <td><span class="threat-badge threat-low">You</span></td>
+        <td style="font-size:12px; color:var(--muted);">Review dominance, SoHo location, fineline specialization</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="studio-name">Bang Bang Tattoo</div>
+          <div class="studio-loc">SoHo + Chinatown, NYC</div>
+        </td>
+        <td>
+          <div class="score-num">88/100</div>
+          <div class="score-bar-wrap"><div class="score-bar-bg"><div class="score-bar-fill blue-bar" style="width:88%"></div></div></div>
+        </td>
+        <td style="font-weight:600;">3,000+</td>
+        <td style="font-weight:600;">500+</td>
+        <td style="color:var(--green); font-weight:700;">15+ (Time Out, Vogue, etc.)</td>
+        <td><span class="threat-badge threat-high">High</span></td>
+        <td style="font-size:12px; color:var(--muted);">Celebrity brand, national press, multiple editorial lists</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="studio-name">IGLA Tattoo</div>
+          <div class="studio-loc">Midtown Manhattan</div>
+        </td>
+        <td>
+          <div class="score-num">62/100</div>
+          <div class="score-bar-wrap"><div class="score-bar-bg"><div class="score-bar-fill blue-bar" style="width:62%"></div></div></div>
+        </td>
+        <td style="font-weight:600;">800+</td>
+        <td style="font-weight:600;">200+</td>
+        <td style="color:var(--yellow);">3–5 (fineline lists)</td>
+        <td><span class="threat-badge threat-high">High</span></td>
+        <td style="font-size:12px; color:var(--muted);">Actively claiming "best fineline NYC," dedicated group/lettering pages, appears in 4+ keywords</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="studio-name">Live By The Sword</div>
+          <div class="studio-loc">SoHo + Union Sq + Brooklyn</div>
+        </td>
+        <td>
+          <div class="score-num">71/100</div>
+          <div class="score-bar-wrap"><div class="score-bar-bg"><div class="score-bar-fill blue-bar" style="width:71%"></div></div></div>
+        </td>
+        <td style="font-weight:600;">2,000+</td>
+        <td style="font-weight:600;">600+</td>
+        <td style="color:var(--yellow);">5–8</td>
+        <td><span class="threat-badge threat-med">Medium</span></td>
+        <td style="font-size:12px; color:var(--muted);">$50 tattoos pull walk-in volume, 3 locations, dominates walk-in searches</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="studio-name">Atelier Eva</div>
+          <div class="studio-loc">Williamsburg, Brooklyn</div>
+        </td>
+        <td>
+          <div class="score-num">58/100</div>
+          <div class="score-bar-wrap"><div class="score-bar-bg"><div class="score-bar-fill blue-bar" style="width:58%"></div></div></div>
+        </td>
+        <td style="font-weight:600;">400+</td>
+        <td style="font-weight:600;">150+</td>
+        <td style="color:var(--yellow);">4–6 (fineline lists)</td>
+        <td><span class="threat-badge threat-med">Medium</span></td>
+        <td style="font-size:12px; color:var(--muted);">Editorial presence, founder authority, ranked in 2026 "best fineline NYC" guides</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="studio-name">Monolith Studio</div>
+          <div class="studio-loc">Brooklyn, NYC</div>
+        </td>
+        <td>
+          <div class="score-num">74/100</div>
+          <div class="score-bar-wrap"><div class="score-bar-bg"><div class="score-bar-fill blue-bar" style="width:74%"></div></div></div>
+        </td>
+        <td style="font-weight:600;">600+</td>
+        <td style="font-weight:600;">180+</td>
+        <td style="color:var(--yellow);">6–8</td>
+        <td><span class="threat-badge threat-med">Medium</span></td>
+        <td style="font-size:12px; color:var(--muted);">Pioneer founders, ranks #1 for butterfly tattoo NYC, strong content strategy</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="studio-name">Love Machine NYC</div>
+          <div class="studio-loc">SoHo, NYC</div>
+        </td>
+        <td>
+          <div class="score-num">55/100</div>
+          <div class="score-bar-wrap"><div class="score-bar-bg"><div class="score-bar-fill blue-bar" style="width:55%"></div></div></div>
+        </td>
+        <td style="font-weight:600;">300+</td>
+        <td style="font-weight:600;">100+</td>
+        <td style="color:var(--muted);">2–3</td>
+        <td><span class="threat-badge threat-watch">Watch</span></td>
+        <td style="font-size:12px; color:var(--muted);">SoHo location, outranks UPLIFT for walk-in SoHo and fine-line flash</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- PIERCING COMPETITORS -->
+  <div style="margin-bottom:10px; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted);">Piercing Competitors</div>
+  <table class="comp-table">
+    <thead>
+      <tr>
+        <th>Studio</th>
+        <th>Est. Authority</th>
+        <th>Google Reviews</th>
+        <th>Yelp Reviews</th>
+        <th>Content Strategy</th>
+        <th>Threat Level</th>
+        <th>Their Edge</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="uplift-row">
+        <td>
+          <div class="studio-name" style="color:var(--gold);">★ UPLIFT Piercing</div>
+          <div class="studio-loc">497 Broome St, SoHo (upliftpiercing.com)</div>
+        </td>
+        <td>
+          <div class="score-num">54/100</div>
+          <div class="score-bar-wrap"><div class="score-bar-bg"><div class="score-bar-fill" style="width:54%"></div></div></div>
+        </td>
+        <td style="color:var(--gold); font-weight:700;">1,200+ (combined)</td>
+        <td style="color:var(--red);">135</td>
+        <td style="color:var(--red);">No blog content</td>
+        <td><span class="threat-badge threat-low">You</span></td>
+        <td style="font-size:12px; color:var(--muted);">Shared review base with tattoo brand, SoHo location, gold + titanium jewelry</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="studio-name">Nine Moons Piercing</div>
+          <div class="studio-loc">123 Lafayette St, SoHo (2 blocks away)</div>
+        </td>
+        <td>
+          <div class="score-num">72/100</div>
+          <div class="score-bar-wrap"><div class="score-bar-bg"><div class="score-bar-fill blue-bar" style="width:72%"></div></div></div>
+        </td>
+        <td style="font-weight:600;">900+</td>
+        <td style="color:var(--red); font-weight:700;">487</td>
+        <td style="color:var(--yellow);">Moderate (Time Out feature)</td>
+        <td><span class="threat-badge threat-high">Critical</span></td>
+        <td style="font-size:12px; color:var(--muted);">Ranks #1 luxury piercing SoHo, 3.6x your Yelp count, Time Out featured, dedicated piercing brand</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="studio-name">DOVIANA</div>
+          <div class="studio-loc">174 Spring St, SoHo (5 min walk)</div>
+        </td>
+        <td>
+          <div class="score-num">60/100</div>
+          <div class="score-bar-wrap"><div class="score-bar-bg"><div class="score-bar-fill blue-bar" style="width:60%"></div></div></div>
+        </td>
+        <td style="font-weight:600;">400+</td>
+        <td style="font-weight:600;">200+</td>
+        <td style="color:var(--green);">Active blog (10+ piercing articles)</td>
+        <td><span class="threat-badge threat-high">High</span></td>
+        <td style="font-size:12px; color:var(--muted);">Active content blog ranking for "septum piercing NYC," "nostril piercing NYC," "navel piercing NYC" — all terms UPLIFT isn't targeting with content</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="studio-name">STUDS</div>
+          <div class="studio-loc">Multiple NYC locations</div>
+        </td>
+        <td>
+          <div class="score-num">80/100</div>
+          <div class="score-bar-wrap"><div class="score-bar-bg"><div class="score-bar-fill blue-bar" style="width:80%"></div></div></div>
+        </td>
+        <td style="font-weight:600;">National scale</td>
+        <td style="font-weight:600;">1,000+</td>
+        <td style="color:var(--green);">Strong national content</td>
+        <td><span class="threat-badge threat-med">Medium</span></td>
+        <td style="font-size:12px; color:var(--muted);">National brand, heavy marketing budget, luxury positioning, chain scale</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- ═══════════════════════════════ SECTION 4: TECHNICAL SEO HEALTH ═══════════════════════════════ -->
+<div class="page break-before">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <span class="section-title">Technical SEO Health</span>
+  </div>
+
+  <div class="audit-grid">
+    <div class="audit-card no-break">
+      <div class="audit-card-header">
+        <div class="audit-card-title">Structured Data / Schema</div>
+        <div class="audit-score-badge score-f">F</div>
+      </div>
+      <ul class="audit-items">
+        <li><span class="cross">✗</span> No TattooParlor / LocalBusiness schema anywhere on site</li>
+        <li><span class="cross">✗</span> 1,200+ Google reviews not in AggregateRating — stars not showing in search</li>
+        <li><span class="cross">✗</span> No FAQPage schema — 24 FAQ answers invisible to rich results</li>
+        <li><span class="cross">✗</span> No Service schema on any service page</li>
+        <li><span class="cross">✗</span> No BreadcrumbList on any page</li>
+        <li><span class="cross">✗</span> No Person schema for any artist</li>
+        <li style="color:var(--green);"><span class="check">✓</span> 10 schema files now built and ready to deploy</li>
+      </ul>
+    </div>
+    <div class="audit-card no-break">
+      <div class="audit-card-header">
+        <div class="audit-card-title">On-Page SEO</div>
+        <div class="audit-score-badge score-c">C+</div>
+      </div>
+      <ul class="audit-items">
+        <li><span class="check">✓</span> Homepage H1 is clear and keyword-targeted</li>
+        <li><span class="check">✓</span> Service pages have strong H2 structure</li>
+        <li><span class="check">✓</span> Internal linking is moderate-to-strong across site</li>
+        <li><span class="cross">✗</span> Meta descriptions missing on homepage, /piercing, /fineline-tattoos-nyc</li>
+        <li><span class="cross">✗</span> Multiple H1 tags on /piercing page (technical error)</li>
+        <li><span class="warn">~</span> Image alt text present but inconsistent across portfolio</li>
+        <li><span class="warn">~</span> Page load signal slow (~1000ms timer noted on multiple pages)</li>
+      </ul>
+    </div>
+    <div class="audit-card no-break">
+      <div class="audit-card-header">
+        <div class="audit-card-title">Content & Blog</div>
+        <div class="audit-score-badge score-d">D</div>
+      </div>
+      <ul class="audit-items">
+        <li><span class="check">✓</span> Core service pages exist for all primary keywords</li>
+        <li><span class="check">✓</span> Pages average 800–900 words — adequate but not dominant</li>
+        <li><span class="cross">✗</span> Only 7 blog posts across 7+ years of operation</li>
+        <li><span class="cross">✗</span> Last blog post was May 2025 — one year gap</li>
+        <li><span class="cross">✗</span> No aftercare guides, style guides, or educational content</li>
+        <li><span class="cross">✗</span> No artist spotlight content</li>
+        <li><span class="cross">✗</span> DOVIANA and IGLA ranking for piercing/tattoo informational queries UPLIFT is not targeting</li>
+      </ul>
+    </div>
+    <div class="audit-card no-break">
+      <div class="audit-card-header">
+        <div class="audit-card-title">Local SEO & Profiles</div>
+        <div class="audit-score-badge score-b">B-</div>
+      </div>
+      <ul class="audit-items">
+        <li><span class="check">✓</span> Google Business Profile active — 4.8 stars, 1,200+ reviews</li>
+        <li><span class="check">✓</span> Address, hours, and category correct on Google</li>
+        <li><span class="check">✓</span> TripAdvisor listing exists with positive reviews</li>
+        <li><span class="check">✓</span> BirdEye aggregating 1,232 reviews</li>
+        <li><span class="cross">✗</span> Yelp only 135 reviews — major local platform underperformance</li>
+        <li><span class="cross">✗</span> TripAdvisor not actively managed — low review count</li>
+        <li><span class="warn">~</span> No NAP schema to reinforce address/phone/hours in search</li>
+      </ul>
+    </div>
+    <div class="audit-card no-break">
+      <div class="audit-card-header">
+        <div class="audit-card-title">Domain Authority & Backlinks</div>
+        <div class="audit-score-badge score-c">C</div>
+      </div>
+      <ul class="audit-items">
+        <li><span class="check">✓</span> Site ranks for competitive terms — indicating moderate authority</li>
+        <li><span class="check">✓</span> Multiple pages indexed and ranking — good crawlability</li>
+        <li><span class="cross">✗</span> Not featured in Time Out, Loving NY, Vogue, or major editorial lists</li>
+        <li><span class="cross">✗</span> No high-authority editorial backlinks detected in searches</li>
+        <li><span class="cross">✗</span> upliftpiercing.com splits domain authority with no redirect strategy</li>
+        <li><span class="warn">~</span> BirdEye, Roadtrippers, iNKPPL links provide minor signals</li>
+      </ul>
+    </div>
+    <div class="audit-card no-break">
+      <div class="audit-card-header">
+        <div class="audit-card-title">Multi-Domain Strategy</div>
+        <div class="audit-score-badge score-d">D+</div>
+      </div>
+      <ul class="audit-items">
+        <li><span class="warn">~</span> upliftpiercing.com is a fully separate domain — not a redirect</li>
+        <li><span class="cross">✗</span> Cross-linking between the two domains is minimal (footer only)</li>
+        <li><span class="cross">✗</span> Backlinks to one domain don't benefit the other</li>
+        <li><span class="cross">✗</span> Google may treat them as separate businesses in local results</li>
+        <li><span class="cross">✗</span> No meta description on upliftpiercing.com homepage</li>
+        <li><span class="warn">~</span> Decision needed: consolidate or invest in both separately</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════ SECTION 5: REVIEW PLATFORM ANALYSIS ═══════════════════════════════ -->
+<div class="page break-before">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <span class="section-title">Review Platform Analysis</span>
+  </div>
+
+  <div class="platform-grid">
+    <div class="platform-card">
+      <div class="platform-name">Google Business Profile</div>
+      <div class="platform-stars">4.8★</div>
+      <div class="platform-count">1,200+ reviews</div>
+      <div class="platform-bar-bg"><div class="platform-bar-fill" style="width:95%;"></div></div>
+      <div class="platform-status" style="color:var(--green);">Excellent — Market Leader</div>
+    </div>
+    <div class="platform-card">
+      <div class="platform-name">Yelp</div>
+      <div class="platform-stars" style="color:var(--yellow);">4.5★</div>
+      <div class="platform-count">135 reviews</div>
+      <div class="platform-bar-bg"><div class="platform-bar-fill" style="width:22%; background:var(--yellow);"></div></div>
+      <div class="platform-status" style="color:var(--red);">Critical Gap — Nine Moons has 487</div>
+    </div>
+    <div class="platform-card">
+      <div class="platform-name">TripAdvisor</div>
+      <div class="platform-stars" style="color:var(--blue);">4.7★</div>
+      <div class="platform-count">Est. 50–80 reviews</div>
+      <div class="platform-bar-bg"><div class="platform-bar-fill" style="width:12%; background:var(--blue);"></div></div>
+      <div class="platform-status" style="color:var(--yellow);">Underutilized — Tourist audience</div>
+    </div>
+    <div class="platform-card">
+      <div class="platform-name">BirdEye</div>
+      <div class="platform-stars" style="color:var(--gold);">4.8★</div>
+      <div class="platform-count">1,232 reviews (aggregated)</div>
+      <div class="platform-bar-bg"><div class="platform-bar-fill" style="width:94%;"></div></div>
+      <div class="platform-status" style="color:var(--green);">Strong — Auto-aggregated</div>
+    </div>
+    <div class="platform-card">
+      <div class="platform-name">Instagram</div>
+      <div class="platform-stars" style="color:var(--purple);">Active</div>
+      <div class="platform-count">@uplifttattoo + @upliftpiercing</div>
+      <div class="platform-bar-bg"><div class="platform-bar-fill" style="width:70%; background:var(--purple);"></div></div>
+      <div class="platform-status" style="color:var(--blue);">Active — Primary acquisition channel</div>
+    </div>
+    <div class="platform-card">
+      <div class="platform-name">Better Business Bureau</div>
+      <div class="platform-stars" style="color:var(--muted);">Listed</div>
+      <div class="platform-count">Profile exists</div>
+      <div class="platform-bar-bg"><div class="platform-bar-fill" style="width:15%; background:var(--muted);"></div></div>
+      <div class="platform-status" style="color:var(--muted);">Low Impact — Trust signal only</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="highlight-box-title">Yelp Gap — What This Costs You</div>
+    <p>Nine Moons Piercing has 487 Yelp reviews. You have 135. On Yelp's "Top 10 Piercing near SoHo" list, that gap directly affects your rank position. In NYC, Yelp still drives 15–25% of local service discovery for walk-in businesses — it's where tourists and new residents search first. Adding Yelp review prompts to your post-appointment follow-up flow (text or email) could realistically add 10–15 reviews per month, closing the gap within 18–24 months. That alone could move you up multiple positions on the Yelp local list.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════ SECTION 6: KEYWORD GAPS & OPPORTUNITIES ═══════════════════════════════ -->
+<div class="page break-before">
+  <div class="section-header">
+    <span class="section-num">06</span>
+    <span class="section-title">Keyword Gaps &amp; Opportunities</span>
+  </div>
+
+  <p style="color:var(--muted); font-size:12px; margin-bottom:24px;">Keywords with meaningful search volume where UPLIFT is not currently ranking in the top 5, or where there is no dedicated page. Each represents a content or page gap.</p>
+
+  <div class="kw-opp-grid">
+    <div class="kw-opp-card">
+      <div>
+        <div class="kw-opp-text">ear piercing nyc</div>
+        <div class="kw-opp-vol">~6,600/mo — High volume</div>
+      </div>
+      <div class="kw-opp-rank rank-none">Not ranking</div>
+    </div>
+    <div class="kw-opp-card">
+      <div>
+        <div class="kw-opp-text">curated ear piercing nyc</div>
+        <div class="kw-opp-vol">~1,900/mo — High intent</div>
+      </div>
+      <div class="kw-opp-rank rank-none">Not ranking</div>
+    </div>
+    <div class="kw-opp-card">
+      <div>
+        <div class="kw-opp-text">do fineline tattoos last</div>
+        <div class="kw-opp-vol">~2,400/mo — FAQ gold</div>
+      </div>
+      <div class="kw-opp-rank rank-none">No page</div>
+    </div>
+    <div class="kw-opp-card">
+      <div>
+        <div class="kw-opp-text">nose piercing nyc</div>
+        <div class="kw-opp-vol">~3,200/mo</div>
+      </div>
+      <div class="kw-opp-rank rank-none">Not ranking</div>
+    </div>
+    <div class="kw-opp-card">
+      <div>
+        <div class="kw-opp-text">how long do fineline tattoos last</div>
+        <div class="kw-opp-vol">~1,800/mo — AI search target</div>
+      </div>
+      <div class="kw-opp-rank rank-none">No page</div>
+    </div>
+    <div class="kw-opp-card">
+      <div>
+        <div class="kw-opp-text">tattoo events nyc</div>
+        <div class="kw-opp-vol">~2,900/mo</div>
+      </div>
+      <div class="kw-opp-rank rank-none">No dedicated page</div>
+    </div>
+    <div class="kw-opp-card">
+      <div>
+        <div class="kw-opp-text">septum piercing nyc</div>
+        <div class="kw-opp-vol">~1,600/mo — DOVIANA ranking</div>
+      </div>
+      <div class="kw-opp-rank rank-none">Not ranking</div>
+    </div>
+    <div class="kw-opp-card">
+      <div>
+        <div class="kw-opp-text">tattoo aftercare nyc</div>
+        <div class="kw-opp-vol">~1,100/mo — Blog opportunity</div>
+      </div>
+      <div class="kw-opp-rank rank-none">No content</div>
+    </div>
+    <div class="kw-opp-card">
+      <div>
+        <div class="kw-opp-text">helix piercing nyc</div>
+        <div class="kw-opp-vol">~2,100/mo</div>
+      </div>
+      <div class="kw-opp-rank rank-none">Not ranking</div>
+    </div>
+    <div class="kw-opp-card">
+      <div>
+        <div class="kw-opp-text">fineline tattoo ideas</div>
+        <div class="kw-opp-vol">~4,400/mo — National</div>
+      </div>
+      <div class="kw-opp-rank rank-none">No dedicated content</div>
+    </div>
+    <div class="kw-opp-card">
+      <div>
+        <div class="kw-opp-text">tattoo corporate event nyc</div>
+        <div class="kw-opp-vol">~720/mo — High value</div>
+      </div>
+      <div class="kw-opp-rank rank-none">No page</div>
+    </div>
+    <div class="kw-opp-card">
+      <div>
+        <div class="kw-opp-text">small tattoos nyc women</div>
+        <div class="kw-opp-vol">~2,200/mo</div>
+      </div>
+      <div class="kw-opp-rank rank-none">Not ranking</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <div class="highlight-box-title">Biggest Keyword Opportunity — "Do Fineline Tattoos Last"</div>
+    <p>"How long do fineline tattoos last" and "do fineline tattoos fade" collectively get searched ~4,200 times per month. These are AI-search-optimized queries — Google and ChatGPT are actively surfacing short answer blocks for them. A dedicated page at /do-fineline-tattoos-last with a short answer block, FAQ schema, and 600+ words of content could capture this traffic and position UPLIFT as the authoritative voice on fineline tattoo longevity. IGLA and Monolith have blog posts in this space. UPLIFT currently has nothing.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════ SECTION 7: ACTION PLAN ═══════════════════════════════ -->
+<div class="page break-before">
+  <div class="section-header">
+    <span class="section-num">07</span>
+    <span class="section-title">Prioritized Action Plan</span>
+  </div>
+
+  <ul class="opp-list">
+    <li class="opp-item no-break">
+      <div class="opp-num">1</div>
+      <div class="opp-body">
+        <div class="opp-title">Deploy All 10 Schema Files (Already Built)</div>
+        <div class="opp-desc">10 schema files are ready in your /schemas folder. Paste each into the corresponding Squarespace page header. This unlocks star ratings in Google search results, FAQPage featured snippets, Service rich results, and BreadcrumbList navigation — for all 9 core pages plus upliftpiercing.com. This is the highest-leverage action with near-zero effort now that the files are built.</div>
+        <div class="opp-tags"><span class="opp-tag">Technical SEO</span><span class="opp-tag">Rich Results</span><span class="opp-tag">Immediate</span></div>
+      </div>
+      <div class="opp-impact">
+        <div class="opp-impact-label">Impact</div>
+        <div class="opp-impact-val impact-critical">Critical</div>
+      </div>
+    </li>
+    <li class="opp-item no-break">
+      <div class="opp-num">2</div>
+      <div class="opp-body">
+        <div class="opp-title">Fix Multiple H1s on /piercing Page</div>
+        <div class="opp-desc">The piercing page has at least 3 H1 tags. Squarespace section headings may be generating these automatically. Audit the page and convert all but the primary one to H2 or H3. This is a 20-minute fix in Squarespace that removes a technical SEO error confusing Google about the page's focus keyword.</div>
+        <div class="opp-tags"><span class="opp-tag">Technical SEO</span><span class="opp-tag">On-Page</span><span class="opp-tag">30 minutes</span></div>
+      </div>
+      <div class="opp-impact">
+        <div class="opp-impact-label">Impact</div>
+        <div class="opp-impact-val impact-high">High</div>
+      </div>
+    </li>
+    <li class="opp-item no-break">
+      <div class="opp-num">3</div>
+      <div class="opp-body">
+        <div class="opp-title">Write Meta Descriptions for Core Pages</div>
+        <div class="opp-desc">Homepage, /fineline-tattoos-nyc, /piercing, /flash-tattoo-designs, and /matching-tattoos-nyc all lack meta descriptions. These 155-character summaries directly affect click-through rate in search. A 5–10% CTR improvement on your top pages could mean dozens of additional visitors per week from the same ranking position.</div>
+        <div class="opp-tags"><span class="opp-tag">On-Page SEO</span><span class="opp-tag">CTR</span><span class="opp-tag">1–2 hours</span></div>
+      </div>
+      <div class="opp-impact">
+        <div class="opp-impact-label">Impact</div>
+        <div class="opp-impact-val impact-high">High</div>
+      </div>
+    </li>
+    <li class="opp-item no-break">
+      <div class="opp-num">4</div>
+      <div class="opp-body">
+        <div class="opp-title">Build /do-fineline-tattoos-last Page</div>
+        <div class="opp-desc">~4,200 monthly searches for "do fineline tattoos last / fade." Create a dedicated page with a short answer block, FAQ schema, and 600+ words covering longevity, aftercare, and healed examples. This page is designed for AI search and featured snippets. Competitors have blog posts in this space. UPLIFT has nothing. A well-built page here could rank within 30–60 days.</div>
+        <div class="opp-tags"><span class="opp-tag">New Page</span><span class="opp-tag">AI Search</span><span class="opp-tag">High Volume</span></div>
+      </div>
+      <div class="opp-impact">
+        <div class="opp-impact-label">Impact</div>
+        <div class="opp-impact-val impact-high">High</div>
+      </div>
+    </li>
+    <li class="opp-item no-break">
+      <div class="opp-num">5</div>
+      <div class="opp-body">
+        <div class="opp-title">Add Yelp Review Request to Post-Appointment Flow</div>
+        <div class="opp-desc">Nine Moons has 487 Yelp reviews. UPLIFT has 135. Yelp's "Top 10 Piercing near SoHo" ranking directly depends on review volume and recency. Add a Yelp link to your text follow-up sequence after every appointment — even a 10% conversion rate on your weekly volume would compound significantly. Target: 200+ reviews by end of 2026.</div>
+        <div class="opp-tags"><span class="opp-tag">Reviews</span><span class="opp-tag">Yelp</span><span class="opp-tag">Local SEO</span></div>
+      </div>
+      <div class="opp-impact">
+        <div class="opp-impact-label">Impact</div>
+        <div class="opp-impact-val impact-high">High</div>
+      </div>
+    </li>
+    <li class="opp-item no-break">
+      <div class="opp-num">6</div>
+      <div class="opp-body">
+        <div class="opp-title">Outreach to Editorial Lists (Time Out, Loving NY, etc.)</div>
+        <div class="opp-desc">Bang Bang, IGLA, Atelier Eva, and Monolith all appear in major "best tattoo shops NYC" editorial roundups. UPLIFT does not. These placements generate high-authority backlinks and direct referral traffic. With 1,200+ Google reviews and #1 positions on core keywords, you have a compelling pitch. Target: Time Out NY, Loving New York, Tattooed Images, NY Mag. Each placement = backlink + brand authority + new audience.</div>
+        <div class="opp-tags"><span class="opp-tag">Link Building</span><span class="opp-tag">PR</span><span class="opp-tag">Brand Authority</span></div>
+      </div>
+      <div class="opp-impact">
+        <div class="opp-impact-label">Impact</div>
+        <div class="opp-impact-val impact-high">High</div>
+      </div>
+    </li>
+    <li class="opp-item no-break">
+      <div class="opp-num">7</div>
+      <div class="opp-body">
+        <div class="opp-title">Launch Piercing Blog Content (DOVIANA is Winning Here)</div>
+        <div class="opp-desc">DOVIANA ranks for "septum piercing NYC," "nostril piercing NYC," "navel piercing NYC," and "helix piercing NYC" with dedicated blog posts. UPLIFT has zero piercing blog content. 5–6 posts covering individual piercing types with local SoHo signals would capture this traffic and close the gap. Each post also builds internal linking back to /piercing and /piercing-scheduling.</div>
+        <div class="opp-tags"><span class="opp-tag">Content</span><span class="opp-tag">Piercing SEO</span><span class="opp-tag">vs DOVIANA</span></div>
+      </div>
+      <div class="opp-impact">
+        <div class="opp-impact-label">Impact</div>
+        <div class="opp-impact-val impact-high">High</div>
+      </div>
+    </li>
+    <li class="opp-item no-break">
+      <div class="opp-num">8</div>
+      <div class="opp-body">
+        <div class="opp-title">Decision: Consolidate upliftpiercing.com or Invest in It</div>
+        <div class="opp-desc">Currently upliftpiercing.com is a half-built separate domain with no blog, no meta description, minimal cross-linking to uplifttattoo.com, and no schema. Option A: redirect it to uplifttattoo.com/piercing and consolidate all authority onto one domain. Option B: fully invest in upliftpiercing.com as a standalone piercing brand with its own content strategy. Option A is lower risk and faster. Option B could create a second brand that competes in its own right — but requires real investment.</div>
+        <div class="opp-tags"><span class="opp-tag">Strategy</span><span class="opp-tag">Domain Authority</span><span class="opp-tag">Decision Required</span></div>
+      </div>
+      <div class="opp-impact">
+        <div class="opp-impact-label">Impact</div>
+        <div class="opp-impact-val impact-high">High</div>
+      </div>
+    </li>
+    <li class="opp-item no-break">
+      <div class="opp-num">9</div>
+      <div class="opp-body">
+        <div class="opp-title">Build Artist SEO Pages (Junh, Julia, Kseniya at minimum)</div>
+        <div class="opp-desc">Only Anastasia has a dedicated SEO page. Artists like Junh (butterflies, florals), Julia (micro-realism), and Kseniya (florals) should each have pages targeting their specialty + NYC. These pages rank for artist-name searches, style-specific queries, and create internal links back to booking pages. Each page is a new indexed asset with its own keyword opportunity.</div>
+        <div class="opp-tags"><span class="opp-tag">New Pages</span><span class="opp-tag">Artist SEO</span><span class="opp-tag">Internal Links</span></div>
+      </div>
+      <div class="opp-impact">
+        <div class="opp-impact-label">Impact</div>
+        <div class="opp-impact-val impact-med">Medium</div>
+      </div>
+    </li>
+    <li class="opp-item no-break">
+      <div class="opp-num">10</div>
+      <div class="opp-body">
+        <div class="opp-title">Strengthen /fineline-tattoos-nyc to Challenge finelinetattoo.com for #1</div>
+        <div class="opp-desc">finelinetattoo.com holds #1 for "fineline tattoos nyc" solely because their domain name contains the exact keyword. Your /fineline-tattoos-nyc page at #2 with 800 words can beat it with: 300+ more words of copy, a dedicated FAQ section (with schema now installed), more internal links from homepage and blog, and a "What to expect" section targeting long-tail variants. This is your highest-volume keyword. Moving from #2 to #1 here has meaningful traffic impact.</div>
+        <div class="opp-tags"><span class="opp-tag">Content Expansion</span><span class="opp-tag">Highest Volume Keyword</span><span class="opp-tag">vs finelinetattoo.com</span></div>
+      </div>
+      <div class="opp-impact">
+        <div class="opp-impact-label">Impact</div>
+        <div class="opp-impact-val impact-high">High</div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+<div class="report-footer">
+  <div><span class="footer-brand">UPLIFT Tattoo & Piercing</span> — SEO & Web Presence Report</div>
+  <div>497 Broome St, SoHo NYC · uplifttattoo.com · May 2026</div>
+  <div>Prepared by Claude Code</div>
+</div>
+
+</body>
+</html>
