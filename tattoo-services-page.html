@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tattoo Services in SoHo NYC | UPLIFT Tattoo & Piercing</title>
+  <meta name="description" content="Fineline tattoos, flash designs, custom work, matching tattoos, and lettering at UPLIFT Tattoo & Piercing in SoHo, New York. Walk-ins welcome daily 11 AM-7 PM.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* =============================================
+       RESET & BASE
+    ============================================= */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    em { font-style: normal; }
+
+    :root {
+      --black: #0A0A0A;
+      --white: #FFFFFF;
+      --off-white: #F7F7F7;
+      --gray-100: #E8E8E8;
+      --gray-200: #CCCCCC;
+      --gray-400: #999999;
+      --gray-600: #666666;
+      --font-display: 'Poppins', -apple-system, sans-serif;
+      --font-body: 'Poppins', -apple-system, sans-serif;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+
+    /* =============================================
+       NAVIGATION
+    ============================================= */
+    .u-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 48px;
+      background: var(--white);
+      border-bottom: 1px solid var(--black);
+    }
+
+    .u-nav__logo {
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+
+    .u-nav__links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+
+    .u-nav__links a {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 400;
+      transition: opacity 0.2s;
+    }
+
+    .u-nav__links a:hover { opacity: 0.35; }
+
+    .u-nav__book {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 400;
+      border: 1px solid var(--black);
+      padding: 10px 28px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .u-nav__book:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .u-nav__hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .u-nav__hamburger span {
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--black);
+    }
+
+    /* =============================================
+       HERO
+    ============================================= */
+    .u-hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 65px;
+    }
+
+    .u-hero__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 80px 48px 80px;
+      border-right: 1px solid var(--black);
+    }
+
+    .u-hero__label {
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 36px;
+    }
+
+    .u-hero__headline {
+      font-family: var(--font-display);
+      font-size: clamp(64px, 7.5vw, 116px);
+      font-weight: 300;
+      line-height: 0.93;
+      letter-spacing: -0.025em;
+      margin-bottom: 52px;
+    }
+
+    .u-hero__headline em {  }
+
+    .u-hero__body {
+      font-size: 15px;
+      line-height: 1.75;
+      max-width: 380px;
+      color: var(--gray-600);
+      margin-bottom: 52px;
+      font-weight: 300;
+    }
+
+    .u-hero__actions {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      flex-wrap: wrap;
+    }
+
+    .u-hero__image {
+      position: relative;
+      overflow: hidden;
+      background: #D4D4D4;
+    }
+
+    .u-hero__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%) contrast(1.05);
+    }
+
+    .u-hero__image-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 580px;
+      background: linear-gradient(160deg, #D0D0D0 0%, #B8B8B8 100%);
+      display: flex;
+      align-items: flex-end;
+      padding: 32px;
+    }
+
+    .u-hero__image-tag {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #888;
+    }
+
+    /* =============================================
+       BUTTONS
+    ============================================= */
+    .u-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-body);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 400;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+
+    .u-btn--primary {
+      background: var(--black);
+      color: var(--white);
+      border: 1px solid var(--black);
+      padding: 16px 36px;
+    }
+
+    .u-btn--primary:hover {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .u-btn--outline {
+      background: transparent;
+      color: var(--black);
+      border: 1px solid var(--black);
+      padding: 16px 36px;
+    }
+
+    .u-btn--outline:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .u-btn--outline-white {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid var(--white);
+      padding: 16px 36px;
+    }
+
+    .u-btn--outline-white:hover {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .u-btn--ghost {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--black);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-body);
+      font-weight: 400;
+      transition: gap 0.25s;
+    }
+
+    .u-btn--ghost:hover { gap: 18px; }
+
+    /* =============================================
+       TICKER
+    ============================================= */
+    .u-ticker {
+      background: var(--black);
+      overflow: hidden;
+      padding: 15px 0;
+      border-top: none;
+    }
+
+    .u-ticker__track {
+      display: flex;
+      animation: ticker-scroll 35s linear infinite;
+      white-space: nowrap;
+    }
+
+    .u-ticker__item {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--white);
+      padding: 0 36px;
+      flex-shrink: 0;
+    }
+
+    .u-ticker__dot {
+      display: inline-block;
+      width: 3px;
+      height: 3px;
+      background: #555;
+      border-radius: 50%;
+      vertical-align: middle;
+      flex-shrink: 0;
+      margin: 0 4px;
+    }
+
+    @keyframes ticker-scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* =============================================
+       SECTION UTILITIES
+    ============================================= */
+    .u-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 24px;
+    }
+
+    .u-section-title {
+      font-family: var(--font-display);
+      font-size: clamp(44px, 5.5vw, 76px);
+      font-weight: 300;
+      line-height: 1.02;
+      letter-spacing: -0.015em;
+    }
+
+    .u-section-title em {  }
+
+    /* =============================================
+       SERVICES LIST
+    ============================================= */
+    .u-services {
+      padding: 120px 0 0;
+    }
+
+    .u-services__header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 0 48px 80px;
+      border-bottom: 1px solid var(--black);
+      gap: 60px;
+      align-items: end;
+    }
+
+    .u-services__desc {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--gray-600);
+      font-weight: 300;
+      max-width: 440px;
+      align-self: end;
+    }
+
+    .u-service-row {
+      display: grid;
+      grid-template-columns: 72px 1fr 1.1fr 180px;
+      align-items: center;
+      padding: 38px 48px;
+      border-bottom: 1px solid var(--gray-100);
+      gap: 40px;
+      transition: background 0.25s, color 0.25s, border-color 0.25s;
+    }
+
+    .u-service-row:hover {
+      background: var(--black);
+      color: var(--white);
+      border-bottom-color: transparent;
+    }
+
+    .u-service-row:hover .u-service-row__desc {
+      color: #888;
+    }
+
+    .u-service-row:hover .u-service-row__link {
+      color: var(--white);
+      border-color: #444;
+    }
+
+    .u-service-row__num {
+      font-family: var(--font-display);
+      font-size: 13px;
+      color: var(--gray-400);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      transition: color 0.25s;
+    }
+
+    .u-service-row:hover .u-service-row__num { color: #555; }
+
+    .u-service-row__name {
+      font-family: var(--font-display);
+      font-size: clamp(30px, 3.2vw, 46px);
+      font-weight: 300;
+      letter-spacing: -0.015em;
+      line-height: 1;
+    }
+
+    .u-service-row__name em {  }
+
+    .u-service-row__desc {
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--gray-600);
+      font-weight: 300;
+      transition: color 0.25s;
+    }
+
+    .u-service-row__link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      border: 1px solid var(--gray-200);
+      padding: 12px 20px;
+      justify-self: end;
+      font-family: var(--font-body);
+      font-weight: 400;
+      transition: all 0.25s;
+      white-space: nowrap;
+    }
+
+    .u-service-row__link:hover {
+      background: var(--white);
+      color: var(--black);
+      border-color: var(--white);
+    }
+
+    /* =============================================
+       FEATURED SPLIT (FINELINE)
+    ============================================= */
+    .u-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 680px;
+      border-top: 1px solid var(--black);
+      border-bottom: 1px solid var(--black);
+    }
+
+    .u-split--reverse { direction: rtl; }
+    .u-split--reverse > * { direction: ltr; }
+
+    .u-split__image {
+      background: #C8C8C8;
+      position: relative;
+      overflow: hidden;
+      border-right: 1px solid var(--black);
+    }
+
+    .u-split--reverse .u-split__image {
+      border-right: none;
+      border-left: 1px solid var(--black);
+    }
+
+    .u-split__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%) contrast(1.06);
+    }
+
+    .u-split__image-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 560px;
+      background: linear-gradient(150deg, #CBCBCB 0%, #A8A8A8 100%);
+      display: flex;
+      align-items: flex-end;
+      padding: 28px;
+    }
+
+    .u-split__image-tag {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #888;
+    }
+
+    .u-split__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 64px;
+    }
+
+    .u-split__tag {
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 32px;
+    }
+
+    .u-split__title {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 5.5vw, 82px);
+      font-weight: 300;
+      line-height: 0.97;
+      letter-spacing: -0.02em;
+      margin-bottom: 32px;
+    }
+
+    .u-split__title em {  }
+
+    .u-split__body {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--gray-600);
+      font-weight: 300;
+      margin-bottom: 48px;
+    }
+
+    .u-split__details {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--gray-100);
+      flex-wrap: wrap;
+    }
+
+    .u-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .u-detail__label {
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+    }
+
+    .u-detail__value {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    /* =============================================
+       STATS STRIP
+    ============================================= */
+    .u-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid var(--black);
+    }
+
+    .u-stat {
+      padding: 64px 48px;
+      border-right: 1px solid var(--black);
+    }
+
+    .u-stat:last-child { border-right: none; }
+
+    .u-stat__num {
+      font-family: var(--font-display);
+      font-size: clamp(52px, 5.5vw, 84px);
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -0.025em;
+      margin-bottom: 12px;
+    }
+
+    .u-stat__label {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      font-weight: 300;
+    }
+
+    /* =============================================
+       FLASH SECTION
+    ============================================= */
+    .u-flash {
+      background: var(--black);
+      color: var(--white);
+      padding: 120px 48px 100px;
+    }
+
+    .u-flash__header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      margin-bottom: 80px;
+      align-items: end;
+    }
+
+    .u-flash__title {
+      font-family: var(--font-display);
+      font-size: clamp(56px, 7vw, 104px);
+      font-weight: 300;
+      line-height: 0.93;
+      letter-spacing: -0.025em;
+    }
+
+    .u-flash__title em {  }
+
+    .u-flash__desc {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #888;
+      font-weight: 300;
+      align-self: end;
+    }
+
+    .u-flash__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: #222;
+      border: 1px solid #222;
+      margin-bottom: 64px;
+    }
+
+    .u-flash__card {
+      background: var(--black);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      transition: background 0.2s;
+    }
+
+    .u-flash__card:hover { background: #111; }
+
+    .u-flash__card-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: #191919;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .u-flash__card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%) brightness(0.8);
+      transition: transform 0.45s ease, filter 0.3s ease;
+    }
+
+    .u-flash__card:hover .u-flash__card-img img {
+      transform: scale(1.04);
+      filter: grayscale(100%) brightness(0.95);
+    }
+
+    .u-flash__card-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 220px;
+      background: #181818;
+    }
+
+    .u-flash__card-name {
+      font-family: var(--font-display);
+      font-size: 30px;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.08;
+    }
+
+    .u-flash__card-name em {  }
+
+    .u-flash__card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      gap: 12px;
+    }
+
+    .u-flash__price {
+      font-size: 13px;
+      color: #777;
+      letter-spacing: 0.03em;
+      font-weight: 300;
+    }
+
+    .u-flash__badge {
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--white);
+      border: 1px solid #383838;
+      padding: 6px 14px;
+      flex-shrink: 0;
+    }
+
+    .u-flash__cta {
+      text-align: center;
+    }
+
+    /* =============================================
+       PROCESS
+    ============================================= */
+    .u-process {
+      padding: 120px 48px;
+      border-bottom: 1px solid var(--black);
+    }
+
+    .u-process__header {
+      margin-bottom: 80px;
+    }
+
+    .u-process__steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .u-process__step {
+      padding-right: 48px;
+      border-right: 1px solid var(--gray-100);
+    }
+
+    .u-process__step:first-child { padding-left: 0; }
+    .u-process__step:last-child { border-right: none; padding-right: 0; }
+    .u-process__step + .u-process__step { padding-left: 48px; }
+
+    .u-step__num {
+      font-family: var(--font-display);
+      font-size: 80px;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--gray-100);
+      margin-bottom: 28px;
+      letter-spacing: -0.02em;
+    }
+
+    .u-step__title {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 400;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .u-step__desc {
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--gray-600);
+      font-weight: 300;
+    }
+
+    /* =============================================
+       POLICIES
+    ============================================= */
+    .u-policies {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--black);
+    }
+
+    .u-policy {
+      padding: 80px 48px;
+      border-right: 1px solid var(--black);
+    }
+
+    .u-policy:last-child { border-right: none; }
+
+    .u-policy__title {
+      font-family: var(--font-display);
+      font-size: 34px;
+      font-weight: 300;
+      margin-bottom: 36px;
+      letter-spacing: -0.01em;
+      line-height: 1.05;
+    }
+
+    .u-policy__title em {  }
+
+    .u-policy__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .u-policy__list li {
+      display: flex;
+      gap: 16px;
+      font-size: 14px;
+      line-height: 1.65;
+      color: #555;
+      font-weight: 300;
+    }
+
+    .u-policy__list li::before {
+      content: "-";
+      color: var(--gray-400);
+      flex-shrink: 0;
+    }
+
+    /* =============================================
+       FAQ
+    ============================================= */
+    .u-faq {
+      padding: 120px 48px;
+      border-bottom: 1px solid var(--black);
+    }
+
+    .u-faq__layout {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 100px;
+    }
+
+    .u-faq__sidebar {
+      position: sticky;
+      top: 100px;
+      align-self: start;
+    }
+
+    .u-faq__sidebar-body {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--gray-600);
+      font-weight: 300;
+      margin-top: 24px;
+      margin-bottom: 36px;
+    }
+
+    .u-faq__items {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .u-faq__item {
+      border-top: 1px solid var(--gray-100);
+      padding: 32px 0;
+    }
+
+    .u-faq__item:last-child { border-bottom: 1px solid var(--gray-100); }
+
+    .u-faq__q {
+      font-family: var(--font-display);
+      font-size: 23px;
+      font-weight: 400;
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+
+    .u-faq__a {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #555;
+      font-weight: 300;
+    }
+
+    /* =============================================
+       BOTTOM CTA
+    ============================================= */
+    .u-cta {
+      background: var(--black);
+      color: var(--white);
+      padding: 160px 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 52px;
+    }
+
+    .u-cta__label {
+      font-size: 10px;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: #555;
+    }
+
+    .u-cta__title {
+      font-family: var(--font-display);
+      font-size: clamp(60px, 8vw, 128px);
+      font-weight: 300;
+      line-height: 0.93;
+      letter-spacing: -0.025em;
+      max-width: 960px;
+    }
+
+    .u-cta__title em {  }
+
+    .u-cta__actions {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .u-cta__sub {
+      font-size: 12px;
+      color: #555;
+      letter-spacing: 0.08em;
+      font-weight: 300;
+    }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    .u-footer {
+      border-top: 1px solid var(--black);
+      padding: 44px 48px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .u-footer__brand {
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    .u-footer__address {
+      font-size: 12px;
+      line-height: 1.65;
+      color: #999;
+      font-weight: 300;
+      text-align: center;
+    }
+
+    .u-footer__links {
+      display: flex;
+      gap: 28px;
+      justify-content: flex-end;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .u-footer__links a {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #999;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+
+    .u-footer__links a:hover { color: var(--black); }
+
+    /* =============================================
+       RESPONSIVE
+    ============================================= */
+    @media (max-width: 1100px) {
+      .u-service-row {
+        grid-template-columns: 56px 1fr 1fr 140px;
+        gap: 28px;
+        padding: 32px 32px;
+      }
+      .u-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .u-stat:nth-child(2) { border-right: none; }
+      .u-stat:nth-child(3),
+      .u-stat:nth-child(4) { border-top: 1px solid var(--black); }
+    }
+
+    @media (max-width: 768px) {
+      .u-nav { padding: 18px 24px; }
+      .u-nav__links { display: none; }
+      .u-nav__hamburger { display: flex; }
+
+      .u-hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding-top: 57px;
+      }
+      .u-hero__content {
+        padding: 56px 24px 56px;
+        border-right: none;
+        border-bottom: 1px solid var(--black);
+      }
+      .u-hero__image { height: 65vw; min-height: 280px; }
+
+      .u-services { padding: 80px 0 0; }
+      .u-services__header {
+        grid-template-columns: 1fr;
+        padding: 0 24px 56px;
+        gap: 20px;
+      }
+
+      .u-service-row {
+        grid-template-columns: 1fr;
+        padding: 28px 24px;
+        gap: 12px;
+      }
+      .u-service-row__num { display: none; }
+      .u-service-row__link { justify-self: start; }
+
+      .u-split { grid-template-columns: 1fr; min-height: auto; }
+      .u-split__image { height: 65vw; border-right: none; border-bottom: 1px solid var(--black); }
+      .u-split--reverse .u-split__image { border-left: none; border-bottom: 1px solid var(--black); }
+      .u-split__content { padding: 48px 24px; }
+      .u-split__details { flex-wrap: wrap; gap: 28px; }
+
+      .u-stats { grid-template-columns: 1fr 1fr; }
+      .u-stat { padding: 48px 24px; }
+
+      .u-flash { padding: 80px 24px 72px; }
+      .u-flash__header { grid-template-columns: 1fr; gap: 20px; }
+      .u-flash__grid { grid-template-columns: 1fr; }
+      .u-flash__card { padding: 32px 24px; }
+
+      .u-process { padding: 80px 24px; }
+      .u-process__steps { grid-template-columns: 1fr; }
+      .u-process__step {
+        padding: 40px 0;
+        border-right: none;
+        border-bottom: 1px solid var(--gray-100);
+      }
+      .u-process__step:last-child { border-bottom: none; }
+      .u-process__step + .u-process__step { padding-left: 0; }
+
+      .u-policies { grid-template-columns: 1fr; }
+      .u-policy {
+        border-right: none;
+        border-bottom: 1px solid var(--black);
+        padding: 56px 24px;
+      }
+      .u-policy:last-child { border-bottom: none; }
+
+      .u-faq { padding: 80px 24px; }
+      .u-faq__layout { grid-template-columns: 1fr; gap: 48px; }
+      .u-faq__sidebar { position: static; }
+
+      .u-cta { padding: 100px 24px; gap: 40px; }
+      .u-cta__actions { flex-direction: column; }
+
+      .u-footer {
+        grid-template-columns: 1fr;
+        padding: 40px 24px;
+        gap: 28px;
+        text-align: center;
+      }
+      .u-footer__links { justify-content: center; }
+    }
+  </style>
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TattooParlor",
+    "name": "UPLIFT Tattoo & Piercing",
+    "url": "https://uplifttattoo.com",
+    "image": "https://uplifttattoo.com/path-to-image.jpg",
+    "description": "Luxury fineline tattoo and piercing studio in SoHo, New York City. Specializing in single-needle fineline tattoos, flash designs, custom work, matching tattoos, and group tattoos.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "497 Broome St",
+      "addressLocality": "New York",
+      "addressRegion": "NY",
+      "postalCode": "10013",
+      "addressCountry": "US"
+    },
+    "areaServed": ["SoHo", "New York City", "Manhattan"],
+    "openingHours": "Mo-Su 11:00-19:00",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Tattoo Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fineline Tattoos", "description": "Single-needle and fineline tattoos with precision and detail" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Flash Tattoos", "description": "Pre-designed ready-to-tattoo flash designs starting at $199" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Tattoos", "description": "Custom fineline tattoo designs starting at $299" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Matching Tattoos", "description": "Coordinated designs for friends, couples, and groups" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Group Tattoos", "description": "Group tattoo appointments for bachelorette parties and friend groups" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Lettering Tattoos", "description": "Names, dates, and quotes in clean typography starting at $299" } }
+      ]
+    },
+    "sameAs": [
+      "https://www.instagram.com/uplifttattoo",
+      "https://www.instagram.com/upliftpiercing"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do you accept walk-ins?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Walk-ins are welcome daily from 11 AM to 7 PM at 497 Broome St in SoHo. Flash designs are available same-day. Custom work may require a booking depending on artist availability." }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a tattoo cost at UPLIFT?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Flash tattoos start at $199. Custom tattoos start at $299, and detailed fineline pieces often run $500 or more. Final pricing is confirmed after your artist reviews the stencil." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a fineline tattoo?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A fineline tattoo uses thin, precise lines and delicate shading to create refined, minimal designs. UPLIFT specializes in fineline and single-needle work designed to stay clean over time." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is UPLIFT good for a first tattoo?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Many of our clients are getting their first tattoo. Our artists are communicative and focused on making the experience comfortable from start to finish." }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- ========== NAV ========== -->
+  <nav class="u-nav" role="navigation" aria-label="Main navigation">
+    <a href="/" class="u-nav__logo" aria-label="UPLIFT Home">UPLIFT</a>
+    <ul class="u-nav__links">
+      <li><a href="/tattoo-services-soho">Tattoo</a></li>
+      <li><a href="/piercing">Piercing</a></li>
+      <li><a href="/designs-available">Flash</a></li>
+      <li><a href="/artists">Artists</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+    <a href="/booking" class="u-nav__book">Book</a>
+    <button class="u-nav__hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="u-hero" aria-labelledby="hero-heading">
+    <div class="u-hero__content">
+      <p class="u-hero__label">Tattoo Services - 497 Broome St, SoHo NYC</p>
+      <h1 class="u-hero__headline" id="hero-heading">
+        Every<br>line,<br><em>intentional.</em>
+      </h1>
+      <p class="u-hero__body">
+        UPLIFT is SoHo's fineline studio. Precise technique, delicate detail, and a clean experience from first visit to final result. Walk in or book ahead.
+      </p>
+      <div class="u-hero__actions">
+        <a href="/booking" class="u-btn u-btn--primary">Book Your Appointment</a>
+        <a href="/designs-available" class="u-btn u-btn--ghost">View Flash Designs <span>&#8594;</span></a>
+      </div>
+    </div>
+    <div class="u-hero__image" aria-hidden="true">
+      <!-- Replace the placeholder div below with: <img src="/path-to-hero-image.jpg" alt="Fineline tattoo work at UPLIFT Tattoo in SoHo NYC"> -->
+      <div class="u-hero__image-placeholder">
+        <span class="u-hero__image-tag">Hero image - fineline tattoo work</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TICKER ========== -->
+  <div class="u-ticker" aria-hidden="true">
+    <div class="u-ticker__track">
+      <span class="u-ticker__item">Walk-ins Welcome Daily 11 AM - 7 PM</span>
+      <span class="u-ticker__dot"></span>
+      <span class="u-ticker__item">497 Broome St, SoHo New York</span>
+      <span class="u-ticker__dot"></span>
+      <span class="u-ticker__item">Fineline &nbsp;&middot;&nbsp; Flash &nbsp;&middot;&nbsp; Custom &nbsp;&middot;&nbsp; Matching</span>
+      <span class="u-ticker__dot"></span>
+      <span class="u-ticker__item">Single-Needle Specialists</span>
+      <span class="u-ticker__dot"></span>
+      <span class="u-ticker__item">Licensed &amp; Insured Studio</span>
+      <span class="u-ticker__dot"></span>
+      <!-- Duplicate for seamless loop -->
+      <span class="u-ticker__item">Walk-ins Welcome Daily 11 AM - 7 PM</span>
+      <span class="u-ticker__dot"></span>
+      <span class="u-ticker__item">497 Broome St, SoHo New York</span>
+      <span class="u-ticker__dot"></span>
+      <span class="u-ticker__item">Fineline &nbsp;&middot;&nbsp; Flash &nbsp;&middot;&nbsp; Custom &nbsp;&middot;&nbsp; Matching</span>
+      <span class="u-ticker__dot"></span>
+      <span class="u-ticker__item">Single-Needle Specialists</span>
+      <span class="u-ticker__dot"></span>
+      <span class="u-ticker__item">Licensed &amp; Insured Studio</span>
+      <span class="u-ticker__dot"></span>
+    </div>
+  </div>
+
+  <!-- ========== SERVICES LIST ========== -->
+  <section class="u-services" aria-labelledby="services-heading">
+    <div class="u-services__header">
+      <div>
+        <p class="u-eyebrow">What We Do</p>
+        <h2 class="u-section-title" id="services-heading">
+          Our<br><em>services.</em>
+        </h2>
+      </div>
+      <p class="u-services__desc">
+        From first tattoos to intricate fineline work - our artists specialize in clean, precise, delicate pieces that are made to last. Walk in or book ahead.
+      </p>
+    </div>
+
+    <div role="list">
+
+      <div class="u-service-row" role="listitem">
+        <span class="u-service-row__num">01</span>
+        <h3 class="u-service-row__name"><em>Fineline</em><br>Tattoos</h3>
+        <p class="u-service-row__desc">Our signature work. Thin, precise lines and delicate detail that create refined designs with a soft, elegant finish. Ideal for minimalist and intricate styles alike.</p>
+        <a href="/fineline-tattoos-nyc" class="u-service-row__link">Explore</a>
+      </div>
+
+      <div class="u-service-row" role="listitem">
+        <span class="u-service-row__num">02</span>
+        <h3 class="u-service-row__name"><em>Flash</em><br>Tattoos</h3>
+        <p class="u-service-row__desc">Pre-designed, ready-to-tattoo pieces curated by our artists. Browse available designs online or walk in to see what's on the wall. Starting at $199.</p>
+        <a href="/designs-available" class="u-service-row__link">View Designs</a>
+      </div>
+
+      <div class="u-service-row" role="listitem">
+        <span class="u-service-row__num">03</span>
+        <h3 class="u-service-row__name"><em>Custom</em><br>Tattoos</h3>
+        <p class="u-service-row__desc">Bring your idea. Your artist develops a stencil tailored to your concept, placement, and size. Starting at $299 - most meaningful custom pieces run $500 or more.</p>
+        <a href="/booking" class="u-service-row__link">Start Request</a>
+      </div>
+
+      <div class="u-service-row" role="listitem">
+        <span class="u-service-row__num">04</span>
+        <h3 class="u-service-row__name"><em>Matching</em><br>Tattoos</h3>
+        <p class="u-service-row__desc">A permanent connection. Whether you're with a partner, friend, sibling, or your whole group - we'll design something that works beautifully for multiple people at once.</p>
+        <a href="/matching-tattoos-nyc" class="u-service-row__link">Learn More</a>
+      </div>
+
+      <div class="u-service-row" role="listitem">
+        <span class="u-service-row__num">05</span>
+        <h3 class="u-service-row__name"><em>Group</em><br>Tattoos</h3>
+        <p class="u-service-row__desc">Bachelorette parties, friend trips, office events. We handle groups of any size with coordinated scheduling. $225 group deposit. Come in together, leave with ink.</p>
+        <a href="/group-tattoos-nyc" class="u-service-row__link">Plan Your Group</a>
+      </div>
+
+      <div class="u-service-row" role="listitem">
+        <span class="u-service-row__num">06</span>
+        <h3 class="u-service-row__name"><em>Lettering</em><br>Tattoos</h3>
+        <p class="u-service-row__desc">Names, dates, quotes, coordinates. Clean typography executed with precision. Our artists help you choose the right font, size, and placement. Starting at $299.</p>
+        <a href="/booking" class="u-service-row__link">Book Now</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== FEATURED: FINELINE ========== -->
+  <section class="u-split" aria-labelledby="fineline-heading">
+    <div class="u-split__image" aria-hidden="true">
+      <!-- Replace with: <img src="/path-to-fineline-image.jpg" alt="Fineline tattoo close-up at UPLIFT SoHo NYC"> -->
+      <div class="u-split__image-placeholder">
+        <span class="u-split__image-tag">Image: fineline tattoo close-up</span>
+      </div>
+    </div>
+    <div class="u-split__content">
+      <p class="u-split__tag">Signature Service</p>
+      <h2 class="u-split__title" id="fineline-heading">
+        Fineline<br><em>is what<br>we do best.</em>
+      </h2>
+      <p class="u-split__body">
+        Single-needle and fineline work requires precision, patience, and deep familiarity with how delicate lines behave over time. Our artists have mastered it. Every piece is designed for clarity now and longevity later.
+      </p>
+      <div class="u-split__details">
+        <div class="u-detail">
+          <span class="u-detail__label">Starting At</span>
+          <span class="u-detail__value">$199</span>
+        </div>
+        <div class="u-detail">
+          <span class="u-detail__label">Deposit</span>
+          <span class="u-detail__value">$100</span>
+        </div>
+        <div class="u-detail">
+          <span class="u-detail__label">Walk-ins</span>
+          <span class="u-detail__value">Daily</span>
+        </div>
+      </div>
+      <a href="/fineline-tattoos-nyc" class="u-btn u-btn--primary">Learn About Fineline</a>
+    </div>
+  </section>
+
+  <!-- ========== STATS ========== -->
+  <div class="u-stats" aria-label="Studio at a glance">
+    <div class="u-stat">
+      <div class="u-stat__num">10+</div>
+      <div class="u-stat__label">Artists on Roster</div>
+    </div>
+    <div class="u-stat">
+      <div class="u-stat__num">SoHo</div>
+      <div class="u-stat__label">New York City</div>
+    </div>
+    <div class="u-stat">
+      <div class="u-stat__num">497</div>
+      <div class="u-stat__label">Broome St NYC</div>
+    </div>
+    <div class="u-stat">
+      <div class="u-stat__num">11-7</div>
+      <div class="u-stat__label">Walk-ins Daily</div>
+    </div>
+  </div>
+
+  <!-- ========== FLASH SECTION ========== -->
+  <section class="u-flash" aria-labelledby="flash-heading">
+    <div class="u-flash__header">
+      <h2 class="u-flash__title" id="flash-heading">
+        Ready<br>when<br><em>you are.</em>
+      </h2>
+      <p class="u-flash__desc">
+        Flash tattoos are pre-designed, ready-to-go pieces that can be done the same day you walk in. Browse designs online or stop by the studio to see what's on the wall. No long wait, no back-and-forth - just a great tattoo.
+      </p>
+    </div>
+
+    <div class="u-flash__grid">
+      <div class="u-flash__card">
+        <div class="u-flash__card-img">
+          <!-- Replace with: <img src="/path-to-butterfly-flash.jpg" alt="Butterfly fineline flash tattoo design at UPLIFT SoHo"> -->
+          <div class="u-flash__card-placeholder"></div>
+        </div>
+        <div class="u-flash__card-name">Butterfly<br><em>Collection</em></div>
+        <div class="u-flash__card-meta">
+          <span class="u-flash__price">From $199</span>
+          <span class="u-flash__badge">Available Now</span>
+        </div>
+      </div>
+      <div class="u-flash__card">
+        <div class="u-flash__card-img">
+          <!-- Replace with: <img src="/path-to-floral-flash.jpg" alt="Floral fineline flash tattoo at UPLIFT SoHo NYC"> -->
+          <div class="u-flash__card-placeholder"></div>
+        </div>
+        <div class="u-flash__card-name">Floral<br><em>Designs</em></div>
+        <div class="u-flash__card-meta">
+          <span class="u-flash__price">From $199</span>
+          <span class="u-flash__badge">Available Now</span>
+        </div>
+      </div>
+      <div class="u-flash__card">
+        <div class="u-flash__card-img">
+          <!-- Replace with: <img src="/path-to-minimal-flash.jpg" alt="Minimal fineline flash tattoo at UPLIFT SoHo"> -->
+          <div class="u-flash__card-placeholder"></div>
+        </div>
+        <div class="u-flash__card-name">Minimal<br><em>Symbols</em></div>
+        <div class="u-flash__card-meta">
+          <span class="u-flash__price">From $199</span>
+          <span class="u-flash__badge">Walk-ins Welcome</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="u-flash__cta">
+      <a href="/designs-available" class="u-btn u-btn--outline-white">Browse All Flash Designs &#8594;</a>
+    </div>
+  </section>
+
+  <!-- ========== HOW IT WORKS ========== -->
+  <section class="u-process" aria-labelledby="process-heading">
+    <div class="u-process__header">
+      <p class="u-eyebrow">How It Works</p>
+      <h2 class="u-section-title" id="process-heading" style="max-width:540px;">
+        Simple from<br>start <em>to finish.</em>
+      </h2>
+    </div>
+    <div class="u-process__steps">
+      <div class="u-process__step">
+        <div class="u-step__num">01</div>
+        <h3 class="u-step__title">Choose Your Service</h3>
+        <p class="u-step__desc">Flash, custom, matching, or lettering. Browse designs online or walk in to see what's available. Know your vibe - we'll handle the rest.</p>
+      </div>
+      <div class="u-process__step">
+        <div class="u-step__num">02</div>
+        <h3 class="u-step__title">Book or Walk In</h3>
+        <p class="u-step__desc">Book online with a $100 deposit, or walk in any day from 11 AM to 7 PM. Groups can book with a $225 deposit to reserve multiple artists.</p>
+      </div>
+      <div class="u-process__step">
+        <div class="u-step__num">03</div>
+        <h3 class="u-step__title">Review Your Stencil</h3>
+        <p class="u-step__desc">Your artist prepares the stencil on the day of your appointment. You review placement, size, and every detail together before anything is permanent.</p>
+      </div>
+      <div class="u-process__step">
+        <div class="u-step__num">04</div>
+        <h3 class="u-step__title">Leave with Your Tattoo</h3>
+        <p class="u-step__desc">Full aftercare instructions are provided. Touch-up policy included. We're available after your appointment if you have questions about healing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== POLICIES ========== -->
+  <div class="u-policies">
+    <div class="u-policy">
+      <h2 class="u-policy__title">Booking &amp;<br><em>Deposits</em></h2>
+      <ul class="u-policy__list">
+        <li>Flash tattoo deposit: $100, applied to your total</li>
+        <li>Custom tattoo deposit: $100, applied to your total</li>
+        <li>Group booking deposit: $225 for the full group</li>
+        <li>All deposits are non-refundable</li>
+        <li>One deposit transfer allowed with advance notice</li>
+        <li>Walk-ins welcome daily - no deposit needed</li>
+        <li>Designs are reviewed at your appointment, not sent in advance</li>
+      </ul>
+    </div>
+    <div class="u-policy">
+      <h2 class="u-policy__title">Pricing<br><em>Guidelines</em></h2>
+      <ul class="u-policy__list">
+        <li>Flash tattoos: starting at $199</li>
+        <li>Custom tattoos: starting at $299</li>
+        <li>Meaningful custom fineline work: often $500 or more</li>
+        <li>Lettering tattoos: starting at $299</li>
+        <li>Premium placements (fingers, hands, ribs, neck) may start higher</li>
+        <li>Final pricing depends on size, placement, detail, and artist</li>
+        <li>Exact price confirmed after stencil review on your appointment day</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ========== FAQ ========== -->
+  <section class="u-faq" aria-labelledby="faq-heading">
+    <div class="u-faq__layout">
+      <div class="u-faq__sidebar">
+        <p class="u-eyebrow">Questions</p>
+        <h2 class="u-section-title" id="faq-heading" style="font-size: clamp(38px, 4vw, 58px);">
+          Frequently<br><em>asked.</em>
+        </h2>
+        <p class="u-faq__sidebar-body">Still have questions? Text our concierge or walk in anytime during studio hours. We're happy to help before you book.</p>
+        <a href="/booking" class="u-btn u-btn--primary">Text the Concierge</a>
+      </div>
+
+      <div class="u-faq__items">
+        <div class="u-faq__item">
+          <h3 class="u-faq__q">Do you accept walk-ins?</h3>
+          <p class="u-faq__a">Yes. Walk-ins are welcome daily from 11 AM to 7 PM at 497 Broome St in SoHo. Flash designs are available same-day. Custom work may require a booking depending on artist availability.</p>
+        </div>
+        <div class="u-faq__item">
+          <h3 class="u-faq__q">How much does a tattoo cost at UPLIFT?</h3>
+          <p class="u-faq__a">Flash tattoos start at $199. Custom tattoos start at $299, and most detailed fineline pieces run $500 or more depending on size and complexity. Final pricing is confirmed after your artist reviews the stencil on the day of your appointment.</p>
+        </div>
+        <div class="u-faq__item">
+          <h3 class="u-faq__q">What is a fineline tattoo?</h3>
+          <p class="u-faq__a">A fineline tattoo uses thin, precise lines and delicate shading to create refined, minimal designs. At UPLIFT, fineline work is done by specialists who understand how to create clean lines that hold their shape over time.</p>
+        </div>
+        <div class="u-faq__item">
+          <h3 class="u-faq__q">How long do fineline tattoos last?</h3>
+          <p class="u-faq__a">With proper aftercare and sun protection, fineline tattoos can look sharp for many years. Placement matters - areas with less friction and less sun exposure hold detail longer. Our artists ink with longevity in mind.</p>
+        </div>
+        <div class="u-faq__item">
+          <h3 class="u-faq__q">Can I bring my own design?</h3>
+          <p class="u-faq__a">Absolutely. Bring references, sketches, or inspiration images. Your artist will develop a stencil based on your idea, sized and styled for your placement. Final stencil review happens on the day of your appointment.</p>
+        </div>
+        <div class="u-faq__item">
+          <h3 class="u-faq__q">Do you do group tattoos?</h3>
+          <p class="u-faq__a">Yes. We love groups - bachelorette parties, NYC visitors, couples, families, and friends. Book with a $225 group deposit and we'll coordinate scheduling for everyone. Walk-in groups are also welcome based on availability.</p>
+        </div>
+        <div class="u-faq__item">
+          <h3 class="u-faq__q">Is UPLIFT a good studio for a first tattoo?</h3>
+          <p class="u-faq__a">Yes. Many of our clients are getting their first tattoo. Our artists are patient, communicative, and focused on making the experience comfortable. The studio is clean and easy to find in SoHo - and we're with you through the whole process.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BOTTOM CTA ========== -->
+  <section class="u-cta" aria-labelledby="cta-heading">
+    <p class="u-cta__label">UPLIFT Tattoo &amp; Piercing - SoHo, New York</p>
+    <h2 class="u-cta__title" id="cta-heading">
+      Your next<br><em>tattoo</em><br>starts here.
+    </h2>
+    <div class="u-cta__actions">
+      <a href="/booking" class="u-btn u-btn--outline-white">Book Your Appointment</a>
+      <a href="/designs-available" class="u-btn u-btn--outline-white">Browse Flash Designs</a>
+    </div>
+    <p class="u-cta__sub">Walk-ins welcome daily - 497 Broome St, SoHo NYC - 11 AM to 7 PM</p>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="u-footer">
+    <div class="u-footer__brand">UPLIFT Tattoo &amp; Piercing</div>
+    <div class="u-footer__address">
+      497 Broome St, SoHo<br>
+      New York, NY 10013<br>
+      Open Daily 11 AM - 7 PM
+    </div>
+    <ul class="u-footer__links">
+      <li><a href="/piercing">Piercing</a></li>
+      <li><a href="/artists">Artists</a></li>
+      <li><a href="/designs-available">Flash</a></li>
+      <li><a href="/booking">Book</a></li>
+      <li><a href="https://www.instagram.com/uplifttattoo" rel="noopener">Instagram</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>

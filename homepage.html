@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UPLIFT Tattoo & Piercing | Fineline Tattoo Studio in SoHo NYC</title>
+  <meta name="description" content="UPLIFT Tattoo & Piercing is SoHo's fineline tattoo and luxury piercing studio at 497 Broome St, New York. Walk-ins welcome daily 11 AM-7 PM.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    em { font-style: normal; }
+
+    :root {
+      --black: #0A0A0A;
+      --white: #FFFFFF;
+      --gray-100: #E8E8E8;
+      --gray-200: #CCCCCC;
+      --gray-400: #999;
+      --gray-600: #666;
+      --font-display: 'Poppins', -apple-system, sans-serif;
+      --font-body: 'Poppins', -apple-system, sans-serif;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== NAV ===== */
+    .u-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 22px 48px;
+      background: var(--white);
+      border-bottom: 1px solid var(--black);
+    }
+    .u-nav__logo { font-size: 12px; font-weight: 400; letter-spacing: 0.3em; text-transform: uppercase; }
+    .u-nav__links { display: flex; gap: 40px; list-style: none; }
+    .u-nav__links a { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 400; transition: opacity 0.2s; }
+    .u-nav__links a:hover { opacity: 0.35; }
+    .u-nav__book { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 400; border: 1px solid var(--black); padding: 10px 28px; transition: background 0.2s, color 0.2s; }
+    .u-nav__book:hover { background: var(--black); color: var(--white); }
+    .u-nav__hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .u-nav__hamburger span { display: block; width: 24px; height: 1px; background: var(--black); }
+
+    /* ===== BUTTONS ===== */
+    .u-btn {
+      display: inline-flex; align-items: center; gap: 12px;
+      font-family: var(--font-body); font-size: 11px; letter-spacing: 0.22em;
+      text-transform: uppercase; font-weight: 400; cursor: pointer;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .u-btn--primary { background: var(--black); color: var(--white); border: 1px solid var(--black); padding: 16px 36px; }
+    .u-btn--primary:hover { background: var(--white); color: var(--black); }
+    .u-btn--outline { background: transparent; color: var(--black); border: 1px solid var(--black); padding: 16px 36px; }
+    .u-btn--outline:hover { background: var(--black); color: var(--white); }
+    .u-btn--outline-white { background: transparent; color: var(--white); border: 1px solid var(--white); padding: 16px 36px; }
+    .u-btn--outline-white:hover { background: var(--white); color: var(--black); }
+    .u-btn--ghost { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--black); display: flex; align-items: center; gap: 10px; font-family: var(--font-body); font-weight: 400; transition: gap 0.25s; }
+    .u-btn--ghost:hover { gap: 18px; }
+
+    /* ===== HERO ===== */
+    .hero {
+      height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 65px;
+      position: relative;
+    }
+
+    .hero__left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 64px 48px;
+      border-right: 1px solid var(--black);
+    }
+
+    .hero__top-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hero__tag {
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+    }
+
+    .hero__address {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+    }
+
+    .hero__headline {
+      font-family: var(--font-display);
+      font-size: clamp(72px, 9vw, 140px);
+      font-weight: 300;
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+    }
+
+    .hero__headline em {  }
+
+    .hero__bottom {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .hero__body {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--gray-600);
+      font-weight: 300;
+      max-width: 300px;
+    }
+
+    .hero__actions { display: flex; flex-direction: column; gap: 16px; align-items: flex-end; flex-shrink: 0; }
+
+    .hero__right {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    .hero__img-top {
+      background: #C4C4C4;
+      border-bottom: 1px solid var(--black);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero__img-top img,
+    .hero__img-bottom img {
+      width: 100%; height: 100%; object-fit: cover;
+      filter: grayscale(100%) contrast(1.05);
+    }
+
+    .hero__img-bottom {
+      background: #A8A8A8;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero__img-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: flex-end; padding: 20px;
+    }
+
+    .hero__img-placeholder span {
+      font-size: 10px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: #888;
+    }
+
+    /* ===== TICKER ===== */
+    .ticker { background: var(--black); overflow: hidden; padding: 14px 0; }
+    .ticker__track { display: flex; animation: ticker-scroll 35s linear infinite; white-space: nowrap; }
+    .ticker__item { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--white); padding: 0 32px; flex-shrink: 0; }
+    .ticker__dot { display: inline-block; width: 3px; height: 3px; background: #444; border-radius: 50%; vertical-align: middle; flex-shrink: 0; margin: 0 2px; }
+    @keyframes ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ===== SERVICES PREVIEW ===== */
+    .services-preview {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--black);
+    }
+
+    .services-preview__left {
+      padding: 80px 48px;
+      border-right: 1px solid var(--black);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .u-eyebrow { font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 24px; }
+
+    .u-display {
+      font-family: var(--font-display);
+      font-size: clamp(44px, 5vw, 72px);
+      font-weight: 300;
+      line-height: 1.02;
+      letter-spacing: -0.015em;
+    }
+    .u-display em {  }
+
+    .services-preview__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .service-tile {
+      padding: 48px;
+      border-right: 1px solid var(--black);
+      border-bottom: 1px solid var(--black);
+      transition: background 0.2s;
+    }
+
+    .service-tile:nth-child(even) { border-right: none; }
+    .service-tile:nth-child(n+5) { border-bottom: none; }
+
+    .service-tile:hover { background: var(--black); color: var(--white); }
+    .service-tile:hover .service-tile__desc { color: #888; }
+    .service-tile:hover .service-tile__arrow { opacity: 1; }
+
+    .service-tile__name {
+      font-family: var(--font-display);
+      font-size: clamp(26px, 2.5vw, 36px);
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+    .service-tile__name em {  }
+
+    .service-tile__desc {
+      font-size: 12px;
+      line-height: 1.7;
+      color: var(--gray-600);
+      font-weight: 300;
+      margin-bottom: 24px;
+      transition: color 0.2s;
+    }
+
+    .service-tile__arrow {
+      font-size: 18px;
+      opacity: 0.3;
+      transition: opacity 0.2s;
+    }
+
+    /* ===== ABOUT STRIP ===== */
+    .about-strip {
+      display: grid;
+      grid-template-columns: 2fr 3fr 2fr;
+      border-bottom: 1px solid var(--black);
+      min-height: 400px;
+    }
+
+    .about-strip__left {
+      padding: 64px 48px;
+      border-right: 1px solid var(--black);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .about-strip__center {
+      padding: 64px 48px;
+      border-right: 1px solid var(--black);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .about-strip__quote {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 3.5vw, 52px);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -0.015em;
+    }
+    .about-strip__quote em {  }
+
+    .about-strip__right {
+      padding: 64px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .about-strip__body {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--gray-600);
+      font-weight: 300;
+    }
+
+    /* ===== STATS ===== */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid var(--black);
+    }
+    .stat { padding: 56px 48px; border-right: 1px solid var(--black); }
+    .stat:last-child { border-right: none; }
+    .stat__num { font-family: var(--font-display); font-size: clamp(48px, 5vw, 80px); font-weight: 300; line-height: 1; letter-spacing: -0.025em; margin-bottom: 10px; }
+    .stat__label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-400); font-weight: 300; }
+
+    /* ===== WORK GRID ===== */
+    .work-grid { border-bottom: 1px solid var(--black); }
+
+    .work-grid__header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 64px 48px;
+      border-bottom: 1px solid var(--black);
+      align-items: end;
+      gap: 40px;
+    }
+
+    .work-grid__images {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .work-img {
+      aspect-ratio: 3/4;
+      background: #C0C0C0;
+      border-right: 1px solid var(--black);
+      overflow: hidden;
+      position: relative;
+    }
+    .work-img:last-child { border-right: none; }
+
+    .work-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%) contrast(1.04);
+      transition: transform 0.5s ease;
+    }
+    .work-img:hover img { transform: scale(1.04); }
+
+    .work-img__placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(150deg, #C8C8C8 0%, #A8A8A8 100%);
+      display: flex; align-items: flex-end; padding: 16px;
+    }
+    .work-img__placeholder span { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: #888; }
+
+    .work-grid__footer {
+      padding: 40px 48px;
+      border-top: 1px solid var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .work-grid__footer-text {
+      font-size: 13px;
+      color: var(--gray-600);
+      font-weight: 300;
+    }
+
+    /* ===== ARTISTS SECTION ===== */
+    .artists {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      border-bottom: 1px solid var(--black);
+      min-height: 500px;
+    }
+
+    .artists__sidebar {
+      padding: 64px 48px;
+      border-right: 1px solid var(--black);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .artists__list {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .artist-card {
+      border-right: 1px solid var(--black);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .artist-card:last-child { border-right: none; }
+
+    .artist-card__img {
+      aspect-ratio: 2/3;
+      background: #D4D4D4;
+      overflow: hidden;
+    }
+
+    .artist-card__img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+      transition: filter 0.3s ease;
+    }
+
+    .artist-card:hover .artist-card__img img { filter: grayscale(0%); }
+
+    .artist-card__img-placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(160deg, #D8D8D8 0%, #B0B0B0 100%);
+    }
+
+    .artist-card__info {
+      padding: 20px 24px;
+      border-top: 1px solid var(--black);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .artist-card__name {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    .artist-card__style {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      font-weight: 300;
+    }
+
+    /* ===== FLASH PREVIEW ===== */
+    .flash-preview {
+      background: var(--black);
+      color: var(--white);
+      padding: 100px 48px;
+      border-bottom: 1px solid var(--black);
+    }
+
+    .flash-preview__header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 64px;
+    }
+
+    .flash-preview__title {
+      font-family: var(--font-display);
+      font-size: clamp(52px, 6.5vw, 104px);
+      font-weight: 300;
+      line-height: 0.93;
+      letter-spacing: -0.025em;
+    }
+    .flash-preview__title em {  }
+
+    .flash-preview__scroll {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      background: #1a1a1a;
+      border: 1px solid #1a1a1a;
+    }
+
+    .flash-tile {
+      background: var(--black);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: background 0.2s;
+    }
+    .flash-tile:hover { background: #0f0f0f; }
+
+    .flash-tile__img {
+      aspect-ratio: 1;
+      background: #1a1a1a;
+      overflow: hidden;
+    }
+    .flash-tile__img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) brightness(0.8); transition: transform 0.4s ease; }
+    .flash-tile:hover .flash-tile__img img { transform: scale(1.04); }
+
+    .flash-tile__name {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.1;
+    }
+    .flash-tile__name em {  }
+
+    .flash-tile__price { font-size: 11px; color: #666; letter-spacing: 0.05em; }
+
+    /* ===== PIERCING STRIP ===== */
+    .piercing-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--black);
+      min-height: 560px;
+    }
+
+    .piercing-strip__image {
+      background: #D0D0D0;
+      border-right: 1px solid var(--black);
+      overflow: hidden;
+    }
+    .piercing-strip__image img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.04); }
+    .piercing-strip__image-placeholder { width: 100%; height: 100%; min-height: 400px; background: linear-gradient(150deg, #D4D4D4 0%, #ABABAB 100%); display: flex; align-items: flex-end; padding: 28px; }
+    .piercing-strip__image-placeholder span { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #888; }
+
+    .piercing-strip__content {
+      padding: 80px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .piercing-strip__title {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 5.5vw, 82px);
+      font-weight: 300;
+      line-height: 0.97;
+      letter-spacing: -0.02em;
+      margin-bottom: 32px;
+    }
+    .piercing-strip__title em {  }
+
+    .piercing-strip__body {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--gray-600);
+      font-weight: 300;
+      margin-bottom: 48px;
+      max-width: 420px;
+    }
+
+    .piercing-strip__details {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--gray-100);
+    }
+
+    .detail { display: flex; flex-direction: column; gap: 6px; }
+    .detail__label { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gray-400); }
+    .detail__value { font-family: var(--font-display); font-size: 22px; font-weight: 400; }
+
+    /* ===== REVIEWS ===== */
+    .reviews {
+      padding: 100px 48px;
+      border-bottom: 1px solid var(--black);
+    }
+
+    .reviews__header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 64px;
+    }
+
+    .reviews__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+
+    .review-card {
+      padding: 48px;
+      border-right: 1px solid var(--gray-100);
+    }
+    .review-card:last-child { border-right: none; }
+
+    .review-card__stars {
+      font-size: 14px;
+      letter-spacing: 4px;
+      margin-bottom: 24px;
+      color: var(--black);
+    }
+
+    .review-card__text {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 1.45;
+      letter-spacing: -0.01em;
+      margin-bottom: 28px;
+      
+    }
+
+    .review-card__author {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+    }
+
+    /* ===== VISIT SECTION ===== */
+    .visit {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--black);
+    }
+
+    .visit__map {
+      background: #E0E0E0;
+      border-right: 1px solid var(--black);
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .visit__map-placeholder {
+      text-align: center;
+    }
+
+    .visit__map-placeholder p {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #888;
+      margin-top: 12px;
+    }
+
+    .visit__info {
+      padding: 80px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 48px;
+    }
+
+    .visit__title {
+      font-family: var(--font-display);
+      font-size: clamp(42px, 5vw, 68px);
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .visit__title em {  }
+
+    .visit__details { display: flex; flex-direction: column; gap: 20px; }
+
+    .visit__detail-row {
+      display: flex;
+      gap: 32px;
+      align-items: baseline;
+    }
+
+    .visit__detail-label { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gray-400); width: 80px; flex-shrink: 0; }
+    .visit__detail-value { font-size: 14px; color: var(--black); font-weight: 300; line-height: 1.5; }
+
+    /* ===== BOTTOM CTA ===== */
+    .cta {
+      background: var(--black);
+      color: var(--white);
+      padding: 160px 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 52px;
+    }
+
+    .cta__label { font-size: 10px; letter-spacing: 0.38em; text-transform: uppercase; color: #555; }
+
+    .cta__title {
+      font-family: var(--font-display);
+      font-size: clamp(64px, 9vw, 144px);
+      font-weight: 300;
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+      max-width: 1000px;
+    }
+    .cta__title em {  }
+
+    .cta__actions { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+    .cta__sub { font-size: 12px; color: #555; letter-spacing: 0.08em; font-weight: 300; }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      border-top: 1px solid var(--black);
+      padding: 44px 48px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 40px;
+    }
+    .footer__brand { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 400; }
+    .footer__address { font-size: 12px; line-height: 1.65; color: #999; font-weight: 300; text-align: center; }
+    .footer__links { display: flex; gap: 28px; justify-content: flex-end; list-style: none; flex-wrap: wrap; }
+    .footer__links a { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #999; font-weight: 400; transition: color 0.2s; }
+    .footer__links a:hover { color: var(--black); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1100px) {
+      .services-preview { grid-template-columns: 1fr; }
+      .services-preview__left { border-right: none; border-bottom: 1px solid var(--black); }
+      .artists__list { grid-template-columns: repeat(3, 1fr); }
+      .artists { grid-template-columns: 1fr; }
+      .artists__sidebar { border-right: none; border-bottom: 1px solid var(--black); }
+      .flash-preview__scroll { grid-template-columns: repeat(3, 1fr); }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .stat:nth-child(2) { border-right: none; }
+      .stat:nth-child(3), .stat:nth-child(4) { border-top: 1px solid var(--black); }
+    }
+
+    @media (max-width: 768px) {
+      .u-nav { padding: 18px 24px; }
+      .u-nav__links { display: none; }
+      .u-nav__hamburger { display: flex; }
+
+      .hero { grid-template-columns: 1fr; height: auto; padding-top: 57px; }
+      .hero__left { padding: 48px 24px; border-right: none; border-bottom: 1px solid var(--black); min-height: 70vh; }
+      .hero__headline { font-size: clamp(64px, 16vw, 100px); }
+      .hero__right { grid-template-rows: auto auto; height: 60vw; }
+
+      .services-preview__left { padding: 56px 24px; }
+      .services-preview__grid { grid-template-columns: 1fr; }
+      .service-tile { border-right: none !important; }
+
+      .about-strip { grid-template-columns: 1fr; }
+      .about-strip__left { border-right: none; border-bottom: 1px solid var(--black); padding: 48px 24px; }
+      .about-strip__center { border-right: none; border-bottom: 1px solid var(--black); padding: 48px 24px; }
+      .about-strip__right { padding: 48px 24px; }
+
+      .stats { grid-template-columns: 1fr 1fr; }
+      .stat { padding: 40px 24px; }
+
+      .work-grid__header { grid-template-columns: 1fr; padding: 48px 24px; }
+      .work-grid__images { grid-template-columns: repeat(2, 1fr); }
+      .work-img:nth-child(2n) { border-right: none; }
+      .work-img:nth-child(1), .work-img:nth-child(2) { border-bottom: 1px solid var(--black); }
+      .work-grid__footer { padding: 32px 24px; flex-direction: column; gap: 20px; align-items: flex-start; }
+
+      .artists { grid-template-columns: 1fr; }
+      .artists__sidebar { padding: 48px 24px; border-right: none; border-bottom: 1px solid var(--black); }
+      .artists__list { grid-template-columns: repeat(2, 1fr); }
+      .artist-card:nth-child(even) { border-right: none; }
+
+      .flash-preview { padding: 72px 24px; }
+      .flash-preview__header { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .flash-preview__scroll { grid-template-columns: repeat(2, 1fr); }
+
+      .piercing-strip { grid-template-columns: 1fr; }
+      .piercing-strip__image { height: 65vw; border-right: none; border-bottom: 1px solid var(--black); }
+      .piercing-strip__content { padding: 48px 24px; }
+
+      .reviews { padding: 72px 24px; }
+      .reviews__header { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .reviews__grid { grid-template-columns: 1fr; }
+      .review-card { border-right: none; border-bottom: 1px solid var(--gray-100); }
+      .review-card:last-child { border-bottom: none; }
+
+      .visit { grid-template-columns: 1fr; }
+      .visit__map { min-height: 260px; border-right: none; border-bottom: 1px solid var(--black); }
+      .visit__info { padding: 56px 24px; }
+
+      .cta { padding: 100px 24px; }
+      .cta__actions { flex-direction: column; }
+
+      .footer { grid-template-columns: 1fr; padding: 40px 24px; gap: 24px; text-align: center; }
+      .footer__links { justify-content: center; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TattooParlor",
+    "name": "UPLIFT Tattoo & Piercing",
+    "url": "https://uplifttattoo.com",
+    "image": "https://uplifttattoo.com/path-to-image.jpg",
+    "description": "Luxury fineline tattoo and piercing studio in SoHo, New York. Walk-ins welcome daily 11 AM to 7 PM at 497 Broome St.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "497 Broome St",
+      "addressLocality": "New York",
+      "addressRegion": "NY",
+      "postalCode": "10013",
+      "addressCountry": "US"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 40.7234, "longitude": -74.0030 },
+    "areaServed": ["SoHo", "New York City", "Manhattan"],
+    "openingHours": "Mo-Su 11:00-19:00",
+    "priceRange": "$$",
+    "telephone": "",
+    "sameAs": [
+      "https://www.instagram.com/uplifttattoo",
+      "https://www.instagram.com/upliftpiercing"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="u-nav">
+    <a href="/" class="u-nav__logo">UPLIFT</a>
+    <ul class="u-nav__links">
+      <li><a href="/tattoo-services-soho">Tattoo</a></li>
+      <li><a href="/piercing">Piercing</a></li>
+      <li><a href="/designs-available">Flash</a></li>
+      <li><a href="/artists">Artists</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+    <a href="/booking" class="u-nav__book">Book</a>
+    <button class="u-nav__hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__left">
+      <div class="hero__top-line">
+        <span class="hero__tag">Fineline Tattoo &amp; Luxury Piercing</span>
+        <span class="hero__address">497 Broome St, SoHo NYC</span>
+      </div>
+      <h1 class="hero__headline">
+        SoHo's<br>fineline<br><em>studio.</em>
+      </h1>
+      <div class="hero__bottom">
+        <p class="hero__body">Delicate tattoos and curated piercings in SoHo, New York. Walk in daily or book ahead. Every piece is designed with intention.</p>
+        <div class="hero__actions">
+          <a href="/booking" class="u-btn u-btn--primary">Book Now</a>
+          <a href="/designs-available" class="u-btn u-btn--outline">View Flash</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero__right">
+      <div class="hero__img-top">
+        <!-- Replace: <img src="/hero-fineline-top.jpg" alt="Fineline tattoo at UPLIFT Tattoo SoHo NYC"> -->
+        <div class="hero__img-placeholder"><span>Image: fineline tattoo work</span></div>
+      </div>
+      <div class="hero__img-bottom">
+        <!-- Replace: <img src="/hero-piercing.jpg" alt="Luxury ear piercing at UPLIFT SoHo"> -->
+        <div class="hero__img-placeholder" style="background: linear-gradient(150deg, #B0B0B0 0%, #888 100%);"><span>Image: piercing / jewelry</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span class="ticker__item">Walk-ins Welcome 11 AM - 7 PM</span>
+      <span class="ticker__dot"></span>
+      <span class="ticker__item">Fineline &nbsp;&middot;&nbsp; Flash &nbsp;&middot;&nbsp; Custom &nbsp;&middot;&nbsp; Matching</span>
+      <span class="ticker__dot"></span>
+      <span class="ticker__item">Solid Gold &amp; Titanium Piercing Jewelry</span>
+      <span class="ticker__dot"></span>
+      <span class="ticker__item">497 Broome St, SoHo NYC</span>
+      <span class="ticker__dot"></span>
+      <span class="ticker__item">Single-Needle Specialists</span>
+      <span class="ticker__dot"></span>
+      <span class="ticker__item">Walk-ins Welcome 11 AM - 7 PM</span>
+      <span class="ticker__dot"></span>
+      <span class="ticker__item">Fineline &nbsp;&middot;&nbsp; Flash &nbsp;&middot;&nbsp; Custom &nbsp;&middot;&nbsp; Matching</span>
+      <span class="ticker__dot"></span>
+      <span class="ticker__item">Solid Gold &amp; Titanium Piercing Jewelry</span>
+      <span class="ticker__dot"></span>
+      <span class="ticker__item">497 Broome St, SoHo NYC</span>
+      <span class="ticker__dot"></span>
+      <span class="ticker__item">Single-Needle Specialists</span>
+      <span class="ticker__dot"></span>
+    </div>
+  </div>
+
+  <!-- SERVICES PREVIEW -->
+  <section class="services-preview">
+    <div class="services-preview__left">
+      <div>
+        <p class="u-eyebrow">What We Do</p>
+        <h2 class="u-display">Tattoo &amp;<br><em>Piercing.</em></h2>
+      </div>
+      <a href="/tattoo-services-soho" class="u-btn u-btn--outline" style="margin-top: 40px; align-self: flex-start;">All Services &#8594;</a>
+    </div>
+    <div class="services-preview__grid">
+      <a href="/fineline-tattoos-nyc" class="service-tile">
+        <h3 class="service-tile__name"><em>Fineline</em><br>Tattoos</h3>
+        <p class="service-tile__desc">Thin, precise lines and delicate shading. Our signature work.</p>
+        <span class="service-tile__arrow">&#8594;</span>
+      </a>
+      <a href="/designs-available" class="service-tile">
+        <h3 class="service-tile__name"><em>Flash</em><br>Tattoos</h3>
+        <p class="service-tile__desc">Ready-to-tattoo designs. Walk in, pick your piece. From $199.</p>
+        <span class="service-tile__arrow">&#8594;</span>
+      </a>
+      <a href="/matching-tattoos-nyc" class="service-tile">
+        <h3 class="service-tile__name"><em>Matching</em><br>Tattoos</h3>
+        <p class="service-tile__desc">For friends, couples, and families. Permanent and personal.</p>
+        <span class="service-tile__arrow">&#8594;</span>
+      </a>
+      <a href="/group-tattoos-nyc" class="service-tile">
+        <h3 class="service-tile__name"><em>Group</em><br>Tattoos</h3>
+        <p class="service-tile__desc">Bachelorettes, friend trips, teams. We handle groups of any size.</p>
+        <span class="service-tile__arrow">&#8594;</span>
+      </a>
+      <a href="/booking" class="service-tile">
+        <h3 class="service-tile__name"><em>Custom</em><br>Tattoos</h3>
+        <p class="service-tile__desc">Your concept. Your artist. Your stencil. From $299.</p>
+        <span class="service-tile__arrow">&#8594;</span>
+      </a>
+      <a href="/piercing" class="service-tile">
+        <h3 class="service-tile__name"><em>Luxury</em><br>Piercing</h3>
+        <p class="service-tile__desc">Solid gold and titanium jewelry. Safe, clean, curated.</p>
+        <span class="service-tile__arrow">&#8594;</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ABOUT STRIP -->
+  <section class="about-strip">
+    <div class="about-strip__left">
+      <div>
+        <p class="u-eyebrow">The Studio</p>
+      </div>
+      <div>
+        <p style="font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 8px;">Location</p>
+        <p style="font-size: 14px; font-weight: 300; line-height: 1.6;">497 Broome St<br>SoHo, New York NY 10013</p>
+      </div>
+    </div>
+    <div class="about-strip__center">
+      <blockquote class="about-strip__quote">
+        "Not the cheapest studio in NYC. The most<br><em>trusted one.</em>"
+      </blockquote>
+    </div>
+    <div class="about-strip__right">
+      <p class="about-strip__body">
+        UPLIFT is a fineline tattoo and luxury piercing studio in SoHo, New York. We work with clients who care about quality - first-timers, collectors, visitors, and regulars who know the difference between a good tattoo and a great one.
+      </p>
+      <a href="/about" class="u-btn u-btn--ghost">About UPLIFT <span>&#8594;</span></a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat__num">10+</div>
+      <div class="stat__label">Artists on Roster</div>
+    </div>
+    <div class="stat">
+      <div class="stat__num">SoHo</div>
+      <div class="stat__label">New York City</div>
+    </div>
+    <div class="stat">
+      <div class="stat__num">7</div>
+      <div class="stat__label">Days a Week</div>
+    </div>
+    <div class="stat">
+      <div class="stat__num">11-7</div>
+      <div class="stat__label">Walk-ins Daily</div>
+    </div>
+  </div>
+
+  <!-- WORK GRID -->
+  <section class="work-grid">
+    <div class="work-grid__header">
+      <div>
+        <p class="u-eyebrow">Our Work</p>
+        <h2 class="u-display">Recent<br><em>pieces.</em></h2>
+      </div>
+      <p style="font-size: 14px; line-height: 1.8; color: var(--gray-600); font-weight: 300; max-width: 380px; align-self: end;">Fineline, delicate, and made to last. Each piece is a collaboration between artist and client - from first sketch to final line.</p>
+    </div>
+    <div class="work-grid__images">
+      <div class="work-img">
+        <!-- Replace: <img src="/work-1.jpg" alt="Fineline butterfly tattoo SoHo NYC UPLIFT"> -->
+        <div class="work-img__placeholder"><span>Butterfly fineline</span></div>
+      </div>
+      <div class="work-img">
+        <!-- Replace: <img src="/work-2.jpg" alt="Custom floral fineline tattoo NYC UPLIFT"> -->
+        <div class="work-img__placeholder" style="background: linear-gradient(150deg, #B8B8B8 0%, #A0A0A0 100%);"><span>Floral custom</span></div>
+      </div>
+      <div class="work-img">
+        <!-- Replace: <img src="/work-3.jpg" alt="Matching fineline tattoos NYC UPLIFT"> -->
+        <div class="work-img__placeholder" style="background: linear-gradient(150deg, #D0D0D0 0%, #B4B4B4 100%);"><span>Matching set</span></div>
+      </div>
+      <div class="work-img">
+        <!-- Replace: <img src="/work-4.jpg" alt="Lettering tattoo SoHo NYC UPLIFT"> -->
+        <div class="work-img__placeholder" style="background: linear-gradient(150deg, #C0C0C0 0%, #9C9C9C 100%);"><span>Lettering</span></div>
+      </div>
+    </div>
+    <div class="work-grid__footer">
+      <p class="work-grid__footer-text">Follow <strong>@uplifttattoo</strong> for daily work</p>
+      <a href="https://www.instagram.com/uplifttattoo" class="u-btn u-btn--outline" rel="noopener">Instagram &#8594;</a>
+    </div>
+  </section>
+
+  <!-- ARTISTS -->
+  <section class="artists">
+    <div class="artists__sidebar">
+      <div>
+        <p class="u-eyebrow">Meet the Team</p>
+        <h2 class="u-display">Our<br><em>artists.</em></h2>
+      </div>
+      <a href="/artists" class="u-btn u-btn--outline" style="align-self: flex-start;">All Artists &#8594;</a>
+    </div>
+    <div class="artists__list">
+      <a href="/artists/junh" class="artist-card">
+        <div class="artist-card__img">
+          <!-- Replace: <img src="/junh-portrait.jpg" alt="Junh - fineline tattoo artist at UPLIFT SoHo NYC"> -->
+          <div class="artist-card__img-placeholder"></div>
+        </div>
+        <div class="artist-card__info">
+          <span class="artist-card__name">Junh</span>
+          <span class="artist-card__style">Fineline &middot; Butterflies &middot; Florals</span>
+        </div>
+      </a>
+      <a href="/artists/anastasia" class="artist-card">
+        <div class="artist-card__img">
+          <!-- Replace: <img src="/anastasia-portrait.jpg" alt="Anastasia - micro-realism artist at UPLIFT SoHo"> -->
+          <div class="artist-card__img-placeholder" style="background: linear-gradient(160deg, #C8C8C8 0%, #A8A8A8 100%);"></div>
+        </div>
+        <div class="artist-card__info">
+          <span class="artist-card__name">Anastasia</span>
+          <span class="artist-card__style">Micro-realism &middot; Fineline</span>
+        </div>
+      </a>
+      <a href="/artists/julia" class="artist-card">
+        <div class="artist-card__img">
+          <!-- Replace: <img src="/julia-portrait.jpg" alt="Julia - micro-realism tattoo artist UPLIFT NYC"> -->
+          <div class="artist-card__img-placeholder" style="background: linear-gradient(160deg, #D4D4D4 0%, #B0B0B0 100%);"></div>
+        </div>
+        <div class="artist-card__info">
+          <span class="artist-card__name">Julia</span>
+          <span class="artist-card__style">Micro-realism &middot; Detailed Fineline</span>
+        </div>
+      </a>
+      <a href="/artists/kseniya" class="artist-card">
+        <div class="artist-card__img">
+          <!-- Replace: <img src="/kseniya-portrait.jpg" alt="Kseniya - floral fineline tattoo artist UPLIFT NYC"> -->
+          <div class="artist-card__img-placeholder" style="background: linear-gradient(160deg, #BEBEBE 0%, #9A9A9A 100%);"></div>
+        </div>
+        <div class="artist-card__info">
+          <span class="artist-card__name">Kseniya</span>
+          <span class="artist-card__style">Flowers &middot; Fineline</span>
+        </div>
+      </a>
+      <a href="/artists" class="artist-card" style="background: var(--off-white); justify-content: center; align-items: center; min-height: 300px; border: none;">
+        <div style="text-align: center; padding: 32px;">
+          <p style="font-family: var(--font-display); font-size: 32px; font-weight: 300; line-height: 1.1; margin-bottom: 16px;"><em>+6<br>more</em></p>
+          <p style="font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-400);">View All Artists</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- FLASH PREVIEW -->
+  <section class="flash-preview">
+    <div class="flash-preview__header">
+      <h2 class="flash-preview__title">Flash<br><em>designs.</em></h2>
+      <div style="max-width: 360px; text-align: right;">
+        <p style="font-size: 14px; line-height: 1.8; color: #888; font-weight: 300; margin-bottom: 24px;">Walk in and pick your piece. Pre-designed, ready-to-go, starting at $199. New designs added regularly.</p>
+        <a href="/designs-available" class="u-btn u-btn--outline-white">Browse All Designs &#8594;</a>
+      </div>
+    </div>
+    <div class="flash-preview__scroll">
+      <div class="flash-tile">
+        <div class="flash-tile__img"><div style="width:100%;height:100%;min-height:180px;background:#181818;"></div></div>
+        <div class="flash-tile__name">Butterfly<br><em>Fineline</em></div>
+        <div class="flash-tile__price">From $199</div>
+      </div>
+      <div class="flash-tile">
+        <div class="flash-tile__img"><div style="width:100%;height:100%;min-height:180px;background:#141414;"></div></div>
+        <div class="flash-tile__name">Floral<br><em>Studies</em></div>
+        <div class="flash-tile__price">From $199</div>
+      </div>
+      <div class="flash-tile">
+        <div class="flash-tile__img"><div style="width:100%;height:100%;min-height:180px;background:#161616;"></div></div>
+        <div class="flash-tile__name">Minimal<br><em>Symbols</em></div>
+        <div class="flash-tile__price">From $199</div>
+      </div>
+      <div class="flash-tile">
+        <div class="flash-tile__img"><div style="width:100%;height:100%;min-height:180px;background:#121212;"></div></div>
+        <div class="flash-tile__name">Script &amp;<br><em>Lettering</em></div>
+        <div class="flash-tile__price">From $299</div>
+      </div>
+      <div class="flash-tile" style="align-items: center; justify-content: center; min-height: 200px; border: 1px solid #222;">
+        <p style="font-family: var(--font-display); font-size: 28px; font-weight: 300; line-height: 1.1; color: #555; text-align: center;"><em>View all<br>designs</em></p>
+        <a href="/designs-available" style="font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: #555; margin-top: 16px; display: block; text-align: center;">&#8594;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PIERCING STRIP -->
+  <section class="piercing-strip">
+    <div class="piercing-strip__image">
+      <!-- Replace: <img src="/piercing-hero.jpg" alt="Curated ear piercing with solid gold jewelry at UPLIFT SoHo NYC"> -->
+      <div class="piercing-strip__image-placeholder">
+        <span>Image: ear piercing with gold jewelry</span>
+      </div>
+    </div>
+    <div class="piercing-strip__content">
+      <p style="font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 32px;">Piercing Studio</p>
+      <h2 class="piercing-strip__title">Clean piercings.<br><em>Curated<br>jewelry.</em></h2>
+      <p class="piercing-strip__body">Solid gold and implant-grade titanium jewelry from day one. Safe, clean, and fully guided from placement through healing. No outside jewelry for new piercings. Check-ups always complimentary.</p>
+      <div class="piercing-strip__details">
+        <div class="detail">
+          <span class="detail__label">Gold Jewelry</span>
+          <span class="detail__value">From $99</span>
+        </div>
+        <div class="detail">
+          <span class="detail__label">Titanium</span>
+          <span class="detail__value">From $50</span>
+        </div>
+        <div class="detail">
+          <span class="detail__label">Check-ups</span>
+          <span class="detail__value">Free</span>
+        </div>
+      </div>
+      <a href="/piercing" class="u-btn u-btn--primary">Piercing Services</a>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews">
+    <div class="reviews__header">
+      <div>
+        <p class="u-eyebrow">Client Reviews</p>
+        <h2 class="u-display">What people<br><em>say.</em></h2>
+      </div>
+      <a href="https://g.page/uplifttattoo/review" class="u-btn u-btn--outline" rel="noopener">Leave a Review &#8594;</a>
+    </div>
+    <div class="reviews__grid">
+      <div class="review-card">
+        <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-card__text">"The best studio experience I've had. My artist was precise, patient, and the work came out exactly as I imagined. Clean studio, real professionalism."</p>
+        <span class="review-card__author">Google Review - New York, NY</span>
+      </div>
+      <div class="review-card">
+        <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-card__text">"Got a matching tattoo here with my sister. The team handled everything from start to finish. Both pieces look stunning. We'll definitely be back."</p>
+        <span class="review-card__author">Google Review - New York, NY</span>
+      </div>
+      <div class="review-card">
+        <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-card__text">"First tattoo ever and UPLIFT made it so easy. They walked me through everything, the studio is beautiful, and the result is better than I could have expected."</p>
+        <span class="review-card__author">Google Review - New York, NY</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section class="visit">
+    <div class="visit__map">
+      <!-- Replace with actual Google Maps embed -->
+      <div class="visit__map-placeholder">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="19" stroke="#ccc" stroke-width="1"/><circle cx="20" cy="18" r="5" stroke="#999" stroke-width="1"/><path d="M20 23C20 23 12 31 12 36" stroke="#999" stroke-width="1"/><path d="M20 23C20 23 28 31 28 36" stroke="#999" stroke-width="1"/></svg>
+        <p>Map placeholder<br>497 Broome St, SoHo</p>
+      </div>
+    </div>
+    <div class="visit__info">
+      <div>
+        <p class="u-eyebrow">Find Us</p>
+        <h2 class="visit__title">Visit<br><em>the studio.</em></h2>
+      </div>
+      <div class="visit__details">
+        <div class="visit__detail-row">
+          <span class="visit__detail-label">Address</span>
+          <span class="visit__detail-value">497 Broome St, SoHo<br>New York, NY 10013</span>
+        </div>
+        <div class="visit__detail-row">
+          <span class="visit__detail-label">Hours</span>
+          <span class="visit__detail-value">Monday - Sunday<br>11 AM - 7 PM</span>
+        </div>
+        <div class="visit__detail-row">
+          <span class="visit__detail-label">Walk-ins</span>
+          <span class="visit__detail-value">Welcome daily - no appointment needed<br>for flash designs</span>
+        </div>
+        <div class="visit__detail-row">
+          <span class="visit__detail-label">Book</span>
+          <span class="visit__detail-value"><a href="/booking" style="text-decoration: underline; text-underline-offset: 3px;">uplifttattoo.com/booking</a></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="cta">
+    <p class="cta__label">UPLIFT Tattoo &amp; Piercing - SoHo, New York</p>
+    <h2 class="cta__title">
+      Start<br><em>your story</em><br>in SoHo.
+    </h2>
+    <div class="cta__actions">
+      <a href="/booking" class="u-btn u-btn--outline-white">Book an Appointment</a>
+      <a href="/designs-available" class="u-btn u-btn--outline-white">Browse Flash Designs</a>
+    </div>
+    <p class="cta__sub">Walk-ins welcome daily - 497 Broome St, SoHo NYC - 11 AM to 7 PM</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__brand">UPLIFT Tattoo &amp; Piercing</div>
+    <div class="footer__address">
+      497 Broome St, SoHo<br>New York, NY 10013<br>Open Daily 11 AM - 7 PM
+    </div>
+    <ul class="footer__links">
+      <li><a href="/tattoo-services-soho">Tattoo</a></li>
+      <li><a href="/piercing">Piercing</a></li>
+      <li><a href="/artists">Artists</a></li>
+      <li><a href="/designs-available">Flash</a></li>
+      <li><a href="/booking">Book</a></li>
+      <li><a href="https://www.instagram.com/uplifttattoo" rel="noopener">Instagram</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>
