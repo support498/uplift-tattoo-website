@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UPLIFT - Squarespace Deployment Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Poppins',sans-serif;background:#F0F0F0;color:#0A0A0A;font-size:14px}
+.topbar{background:#0A0A0A;color:#fff;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.topbar h1{font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase}
+.topbar p{font-size:.62rem;color:#666;letter-spacing:.1em}
+.wrap{max-width:1100px;margin:0 auto;padding:40px}
+
+.intro{background:#fff;border:1px solid #DDD;padding:32px;margin-bottom:32px}
+.intro h2{font-size:.9rem;font-weight:600;margin-bottom:12px}
+.intro p{font-size:.82rem;font-weight:300;color:#555;line-height:1.75;margin-bottom:8px}
+.intro ol{margin:12px 0 0 20px}
+.intro li{font-size:.8rem;font-weight:300;color:#555;line-height:2}
+.intro strong{font-weight:600;color:#0A0A0A}
+.intro code{background:#EEE;padding:2px 8px;font-family:'Courier New',monospace;font-size:.75rem}
+
+.page-group{margin-bottom:40px}
+.page-group__title{font-size:.65rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#666;padding:10px 0;border-bottom:2px solid #0A0A0A;margin-bottom:16px}
+
+.page-card{background:#fff;border:1px solid #DDD;margin-bottom:12px}
+.page-card__header{display:grid;grid-template-columns:28px 1fr auto;align-items:center;gap:16px;padding:16px 20px;border-bottom:1px solid #EEE;cursor:pointer}
+.page-card__num{width:28px;height:28px;background:#0A0A0A;color:#fff;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:600;flex-shrink:0}
+.page-card__info h3{font-size:.82rem;font-weight:500;margin-bottom:2px}
+.page-card__info p{font-size:.68rem;color:#888;font-family:'Courier New',monospace}
+.page-card__status{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.badge{font-size:.58rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border:1px solid #DDD}
+.badge--green{background:#F0FFF0;border-color:#00A000;color:#006000}
+.badge--blue{background:#F0F0FF;border-color:#0000AA;color:#000080}
+.badge--gray{background:#F5F5F5;border-color:#CCC;color:#666}
+.page-card__body{padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:20px;font-size:.78rem}
+.step-col h4{font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#888;margin-bottom:10px}
+.step-list{list-style:none}
+.step-list li{display:flex;gap:10px;padding:6px 0;border-bottom:1px solid #F5F5F5;align-items:flex-start}
+.step-list li:last-child{border-bottom:none}
+.step-list .n{width:18px;height:18px;background:#0A0A0A;color:#fff;display:flex;align-items:center;justify-content:center;font-size:.58rem;font-weight:600;flex-shrink:0;margin-top:1px}
+.step-list .t{font-size:.78rem;font-weight:300;color:#444;line-height:1.5}
+.step-list code{font-size:.72rem;background:#F0F0F0;padding:1px 6px;font-family:'Courier New',monospace;color:#0A0A0A}
+.sections-col h4{font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#888;margin-bottom:10px}
+.section-pill{display:inline-flex;align-items:center;gap:6px;background:#F5F5F5;border:1px solid #E0E0E0;padding:4px 10px;margin:3px 3px 3px 0;font-size:.65rem;font-weight:500;letter-spacing:.06em}
+.section-pill .dot{width:6px;height:6px;border-radius:50%;background:#0A0A0A;flex-shrink:0}
+.schema-note{font-size:.72rem;font-weight:300;color:#888;margin-top:10px;padding-top:10px;border-top:1px solid #F0F0F0;line-height:1.6}
+.schema-note strong{font-weight:500;color:#0A0A0A}
+@media(max-width:768px){.page-card__body{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>UPLIFT - Squarespace Deployment Guide</h1>
+  <p>Add every page to your live Squarespace site</p>
+</div>
+
+<div class="wrap">
+
+<div class="intro">
+  <h2>How to Add Each Page to Squarespace</h2>
+  <p>For every page below, follow these 4 steps in your Squarespace admin panel:</p>
+  <ol>
+    <li><strong>Pages &rarr; + Add Page &rarr; Blank Page</strong> — set the URL slug shown</li>
+    <li><strong>Add a Code Block</strong> for each section listed — paste the code from the matching file in <code>squarespace-pages/</code></li>
+    <li><strong>Add the JSON-LD Schema</strong> — go to <strong>Pages &rarr; Settings &rarr; Advanced &rarr; Page Header Code Injection</strong> and paste the schema</li>
+    <li><strong>Replace image placeholders</strong> — upload photos to Squarespace, copy the URL, replace <code>YOUR_IMAGE_URL</code></li>
+  </ol>
+  <p style="margin-top:12px">Open the matching <code>.html</code> file in this folder in your browser. Each section is separated and labeled. Copy one section at a time into a Squarespace Code Block.</p>
+</div>
+
+<!-- SERVICE PAGES -->
+<div class="page-group">
+  <p class="page-group__title">Service Pages</p>
+
+  <div class="page-card">
+    <div class="page-card__header">
+      <div class="page-card__num">1</div>
+      <div class="page-card__info"><h3>Fineline Tattoos NYC</h3><p>/fineline-tattoos-nyc</p></div>
+      <div class="page-card__status"><span class="badge badge--green">Highest SEO Priority</span><span class="badge badge--blue">Schema Included</span></div>
+    </div>
+    <div class="page-card__body">
+      <div class="step-col">
+        <h4>Steps to Add in Squarespace</h4>
+        <ul class="step-list">
+          <li><div class="n">1</div><div class="t">Pages &rarr; + Add Page &rarr; Blank &rarr; URL slug: <code>/fineline-tattoos-nyc</code></div></li>
+          <li><div class="n">2</div><div class="t">Add Code Blocks in order — one per section listed</div></li>
+          <li><div class="n">3</div><div class="t">Page Settings &rarr; Advanced &rarr; Header Code Injection &rarr; paste JSON-LD schema</div></li>
+          <li><div class="n">4</div><div class="t">SEO tab: set title "Fineline Tattoos NYC | UPLIFT Tattoo & Piercing" and meta description</div></li>
+        </ul>
+      </div>
+      <div class="sections-col">
+        <h4>Code Block Sections (in order)</h4>
+        <span class="section-pill"><div class="dot"></div>Breadcrumb</span>
+        <span class="section-pill"><div class="dot"></div>Hero Split</span>
+        <span class="section-pill"><div class="dot"></div>Answer Block</span>
+        <span class="section-pill"><div class="dot"></div>Why Fineline Grid</span>
+        <span class="section-pill"><div class="dot"></div>Styles List</span>
+        <span class="section-pill"><div class="dot"></div>Process Steps</span>
+        <span class="section-pill"><div class="dot"></div>FAQ Accordion</span>
+        <span class="section-pill"><div class="dot"></div>CTA Section</span>
+        <p class="schema-note"><strong>Schema:</strong> Service + FAQPage + BreadcrumbList — paste in Page Header Code Injection</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-card">
+    <div class="page-card__header">
+      <div class="page-card__num">2</div>
+      <div class="page-card__info"><h3>Flash Tattoo Designs</h3><p>/flash-tattoo-designs</p></div>
+      <div class="page-card__status"><span class="badge badge--green">High Traffic</span><span class="badge badge--blue">Schema Included</span></div>
+    </div>
+    <div class="page-card__body">
+      <div class="step-col"><h4>Steps</h4>
+        <ul class="step-list">
+          <li><div class="n">1</div><div class="t">URL slug: <code>/flash-tattoo-designs</code></div></li>
+          <li><div class="n">2</div><div class="t">File: <code>squarespace-pages/flash-tattoo-designs.html</code></div></li>
+          <li><div class="n">3</div><div class="t">Replace gallery image placeholders with real flash photos</div></li>
+        </ul>
+      </div>
+      <div class="sections-col"><h4>Sections</h4>
+        <span class="section-pill"><div class="dot"></div>Dark Hero</span>
+        <span class="section-pill"><div class="dot"></div>Answer Block</span>
+        <span class="section-pill"><div class="dot"></div>Flash Gallery Grid</span>
+        <span class="section-pill"><div class="dot"></div>Styles List</span>
+        <span class="section-pill"><div class="dot"></div>Pricing Cards</span>
+        <span class="section-pill"><div class="dot"></div>Process Steps</span>
+        <span class="section-pill"><div class="dot"></div>FAQ Accordion</span>
+        <span class="section-pill"><div class="dot"></div>CTA Section</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-card">
+    <div class="page-card__header">
+      <div class="page-card__num">3</div>
+      <div class="page-card__info"><h3>First Tattoo NYC</h3><p>/first-tattoo-nyc</p></div>
+      <div class="page-card__status"><span class="badge badge--green">Trust Builder</span><span class="badge badge--blue">Schema Included</span></div>
+    </div>
+    <div class="page-card__body">
+      <div class="step-col"><h4>Steps</h4>
+        <ul class="step-list">
+          <li><div class="n">1</div><div class="t">URL slug: <code>/first-tattoo-nyc</code></div></li>
+          <li><div class="n">2</div><div class="t">File: <code>squarespace-pages/first-tattoo-nyc.html</code></div></li>
+        </ul>
+      </div>
+      <div class="sections-col"><h4>Sections</h4>
+        <span class="section-pill"><div class="dot"></div>Split Hero</span>
+        <span class="section-pill"><div class="dot"></div>Answer Block</span>
+        <span class="section-pill"><div class="dot"></div>What to Expect Grid</span>
+        <span class="section-pill"><div class="dot"></div>Placement Guide</span>
+        <span class="section-pill"><div class="dot"></div>Pricing Cards</span>
+        <span class="section-pill"><div class="dot"></div>FAQ Accordion</span>
+        <span class="section-pill"><div class="dot"></div>CTA Section</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-card">
+    <div class="page-card__header">
+      <div class="page-card__num">4</div>
+      <div class="page-card__info"><h3>Matching Tattoos NYC</h3><p>/matching-tattoos-nyc</p></div>
+      <div class="page-card__status"><span class="badge badge--green">High Conversion</span><span class="badge badge--blue">Schema Included</span></div>
+    </div>
+    <div class="page-card__body">
+      <div class="step-col"><h4>Steps</h4><ul class="step-list"><li><div class="n">1</div><div class="t">URL slug: <code>/matching-tattoos-nyc</code></div></li><li><div class="n">2</div><div class="t">File: <code>squarespace-pages/matching-tattoos-nyc.html</code></div></li></ul></div>
+      <div class="sections-col"><h4>Sections</h4><span class="section-pill"><div class="dot"></div>Split Hero</span><span class="section-pill"><div class="dot"></div>Answer Block</span><span class="section-pill"><div class="dot"></div>Who It's For Grid</span><span class="section-pill"><div class="dot"></div>Design Ideas List</span><span class="section-pill"><div class="dot"></div>Process Steps</span><span class="section-pill"><div class="dot"></div>Pricing Cards</span><span class="section-pill"><div class="dot"></div>FAQ + CTA</span></div>
+    </div>
+  </div>
+
+  <div class="page-card">
+    <div class="page-card__header">
+      <div class="page-card__num">5</div>
+      <div class="page-card__info"><h3>Group Tattoos NYC</h3><p>/group-tattoos-nyc</p></div>
+      <div class="page-card__status"><span class="badge badge--blue">Schema Included</span></div>
+    </div>
+    <div class="page-card__body">
+      <div class="step-col"><h4>Steps</h4><ul class="step-list"><li><div class="n">1</div><div class="t">URL slug: <code>/group-tattoos-nyc</code></div></li><li><div class="n">2</div><div class="t">File: <code>squarespace-pages/group-tattoos-nyc.html</code></div></li></ul></div>
+      <div class="sections-col"><h4>Sections</h4><span class="section-pill"><div class="dot"></div>Dark Hero</span><span class="section-pill"><div class="dot"></div>Group Types Grid</span><span class="section-pill"><div class="dot"></div>Process Steps</span><span class="section-pill"><div class="dot"></div>Activation Section</span><span class="section-pill"><div class="dot"></div>Pricing Cards</span><span class="section-pill"><div class="dot"></div>FAQ + CTA</span></div>
+    </div>
+  </div>
+
+  <div class="page-card">
+    <div class="page-card__header">
+      <div class="page-card__num">6</div>
+      <div class="page-card__info"><h3>Butterfly Tattoos NYC</h3><p>/butterfly-tattoos-nyc</p></div>
+      <div class="page-card__status"><span class="badge badge--blue">Schema Included</span></div>
+    </div>
+    <div class="page-card__body">
+      <div class="step-col"><h4>Steps</h4><ul class="step-list"><li><div class="n">1</div><div class="t">URL slug: <code>/butterfly-tattoos-nyc</code></div></li><li><div class="n">2</div><div class="t">File: <code>squarespace-pages/butterfly-tattoos-nyc.html</code></div></li></ul></div>
+      <div class="sections-col"><h4>Sections</h4><span class="section-pill"><div class="dot"></div>Split Hero</span><span class="section-pill"><div class="dot"></div>Styles List</span><span class="section-pill"><div class="dot"></div>Gallery Grid</span><span class="section-pill"><div class="dot"></div>Artist Feature</span><span class="section-pill"><div class="dot"></div>Placement Guide</span><span class="section-pill"><div class="dot"></div>FAQ + CTA</span></div>
+    </div>
+  </div>
+
+  <div class="page-card">
+    <div class="page-card__header">
+      <div class="page-card__num">7</div>
+      <div class="page-card__info"><h3>Walk-In Tattoos SoHo</h3><p>/walk-in-tattoos-soho</p></div>
+      <div class="page-card__status"><span class="badge badge--green">Local Intent</span><span class="badge badge--blue">Schema Included</span></div>
+    </div>
+    <div class="page-card__body">
+      <div class="step-col"><h4>Steps</h4><ul class="step-list"><li><div class="n">1</div><div class="t">URL slug: <code>/walk-in-tattoos-soho</code></div></li><li><div class="n">2</div><div class="t">File: <code>squarespace-pages/walk-in-tattoos-soho.html</code></div></li></ul></div>
+      <div class="sections-col"><h4>Sections</h4><span class="section-pill"><div class="dot"></div>Dark Hero + Info Panel</span><span class="section-pill"><div class="dot"></div>Answer Block</span><span class="section-pill"><div class="dot"></div>Why Walk-In Grid</span><span class="section-pill"><div class="dot"></div>Flash Preview Grid</span><span class="section-pill"><div class="dot"></div>Policies Grid</span><span class="section-pill"><div class="dot"></div>FAQ + CTA</span></div>
+    </div>
+  </div>
+
+  <div class="page-card">
+    <div class="page-card__header">
+      <div class="page-card__num">8</div>
+      <div class="page-card__info"><h3>Piercing Studio SoHo</h3><p>/piercing-studio-soho</p></div>
+      <div class="page-card__status"><span class="badge badge--green">New Page</span><span class="badge badge--blue">Schema Included</span></div>
+    </div>
+    <div class="page-card__body">
+      <div class="step-col"><h4>Steps</h4><ul class="step-list"><li><div class="n">1</div><div class="t">URL slug: <code>/piercing-studio-soho</code></div></li><li><div class="n">2</div><div class="t">File: <code>squarespace-pages/piercing-studio-soho.html</code></div></li></ul></div>
+      <div class="sections-col"><h4>Sections</h4><span class="section-pill"><div class="dot"></div>Split Hero</span><span class="section-pill"><div class="dot"></div>Answer Block</span><span class="section-pill"><div class="dot"></div>Why UPLIFT Grid</span><span class="section-pill"><div class="dot"></div>Services List</span><span class="section-pill"><div class="dot"></div>Jewelry Cards</span><span class="section-pill"><div class="dot"></div>Curated Ear Split</span><span class="section-pill"><div class="dot"></div>Process Steps</span><span class="section-pill"><div class="dot"></div>Policies + FAQ + CTA</span></div>
+    </div>
+  </div>
+
+  <div class="page-card">
+    <div class="page-card__header">
+      <div class="page-card__num">9</div>
+      <div class="page-card__info"><h3>Luxury Piercing NYC</h3><p>/luxury-piercing-nyc</p></div>
+      <div class="page-card__status"><span class="badge badge--blue">Schema Included</span></div>
+    </div>
+    <div class="page-card__body">
+      <div class="step-col"><h4>Steps</h4><ul class="step-list"><li><div class="n">1</div><div class="t">URL slug: <code>/luxury-piercing-nyc</code></div></li><li><div class="n">2</div><div class="t">File: <code>squarespace-pages/luxury-piercing-nyc.html</code></div></li></ul></div>
+      <div class="sections-col"><h4>Sections</h4><span class="section-pill"><div class="dot"></div>Dark Hero</span><span class="section-pill"><div class="dot"></div>Why Different Grid</span><span class="section-pill"><div class="dot"></div>Gold vs Titanium Cards</span><span class="section-pill"><div class="dot"></div>Curated Ear Split</span><span class="section-pill"><div class="dot"></div>FAQ + CTA</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- BLOG PAGES -->
+<div class="page-group">
+  <p class="page-group__title">Blog Posts</p>
+
+  <div class="page-card">
+    <div class="page-card__header">
+      <div class="page-card__num">10</div>
+      <div class="page-card__info"><h3>First Tattoo Guide NYC</h3><p>/blog/first-tattoo-guide-nyc</p></div>
+      <div class="page-card__status"><span class="badge badge--green">High Volume</span><span class="badge badge--blue">Article Schema</span></div>
+    </div>
+    <div class="page-card__body">
+      <div class="step-col"><h4>Steps</h4><ul class="step-list"><li><div class="n">1</div><div class="t">Create a Blog Page in Squarespace &rarr; New Post</div></li><li><div class="n">2</div><div class="t">OR: Blank page at <code>/first-tattoo-guide-nyc</code></div></li><li><div class="n">3</div><div class="t">File: <code>squarespace-pages/blog-first-tattoo-guide.html</code></div></li></ul></div>
+      <div class="sections-col"><h4>Sections</h4><span class="section-pill"><div class="dot"></div>Article Header</span><span class="section-pill"><div class="dot"></div>Answer Block</span><span class="section-pill"><div class="dot"></div>Body Content</span><span class="section-pill"><div class="dot"></div>FAQ Accordion</span><span class="section-pill"><div class="dot"></div>CTA Section</span><p class="schema-note"><strong>Schema:</strong> Article + FAQPage — paste in Header Code Injection</p></div>
+    </div>
+  </div>
+
+  <div class="page-card">
+    <div class="page-card__header">
+      <div class="page-card__num">11</div>
+      <div class="page-card__info"><h3>How Much Does a Tattoo Cost NYC</h3><p>/blog/how-much-does-a-tattoo-cost-nyc</p></div>
+      <div class="page-card__status"><span class="badge badge--green">High Search Volume</span><span class="badge badge--blue">Article + FAQ Schema</span></div>
+    </div>
+    <div class="page-card__body">
+      <div class="step-col"><h4>Steps</h4><ul class="step-list"><li><div class="n">1</div><div class="t">New Blog Post or blank page at <code>/how-much-does-a-tattoo-cost-nyc</code></div></li><li><div class="n">2</div><div class="t">File: <code>squarespace-pages/blog-tattoo-cost-nyc.html</code></div></li></ul></div>
+      <div class="sections-col"><h4>Sections</h4><span class="section-pill"><div class="dot"></div>Article Header</span><span class="section-pill"><div class="dot"></div>Answer Block</span><span class="section-pill"><div class="dot"></div>Pricing Table</span><span class="section-pill"><div class="dot"></div>Pricing Cards</span><span class="section-pill"><div class="dot"></div>FAQ + CTA</span></div>
+    </div>
+  </div>
+
+  <div class="page-card">
+    <div class="page-card__header">
+      <div class="page-card__num">12</div>
+      <div class="page-card__info"><h3>Piercing Blog Posts (4)</h3><p>/blog/septum | /blog/nostril | /blog/helix | /blog/curated-ear</p></div>
+      <div class="page-card__status"><span class="badge badge--blue">Article Schema</span></div>
+    </div>
+    <div class="page-card__body">
+      <div class="step-col"><h4>Steps</h4><ul class="step-list"><li><div class="n">1</div><div class="t">One blog post per topic — create 4 posts</div></li><li><div class="n">2</div><div class="t">Files in <code>squarespace-pages/</code> folder — one file per post</div></li></ul></div>
+      <div class="sections-col"><h4>Files</h4><span class="section-pill"><div class="dot"></div>blog-septum-piercing.html</span><span class="section-pill"><div class="dot"></div>blog-nostril-piercing.html</span><span class="section-pill"><div class="dot"></div>blog-helix-piercing.html</span><span class="section-pill"><div class="dot"></div>blog-curated-ear.html</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- LOCAL PAGES -->
+<div class="page-group">
+  <p class="page-group__title">Local Neighborhood SEO Pages (11)</p>
+  <div class="page-card">
+    <div class="page-card__header">
+      <div class="page-card__num">13+</div>
+      <div class="page-card__info"><h3>All Local Neighborhood Pages</h3><p>/local/tattoo-shop-nolita | /local/tattoo-shop-tribeca | etc.</p></div>
+      <div class="page-card__status"><span class="badge badge--green">Competitor Defense</span><span class="badge badge--blue">LocalBusiness Schema</span></div>
+    </div>
+    <div class="page-card__body">
+      <div class="step-col"><h4>Steps</h4><ul class="step-list">
+        <li><div class="n">1</div><div class="t">Create a <strong>Not Linked</strong> page folder called "Local" in Squarespace Pages</div></li>
+        <li><div class="n">2</div><div class="t">Add one blank page per neighborhood with the URL slugs shown</div></li>
+        <li><div class="n">3</div><div class="t">Files are in <code>local/</code> folder — one HTML per neighborhood</div></li>
+        <li><div class="n">4</div><div class="t">These pages don't need to appear in your nav - they're SEO-only</div></li>
+      </ul></div>
+      <div class="sections-col"><h4>11 Pages to Create</h4>
+        <span class="section-pill"><div class="dot"></div>tattoo-shop-nolita</span>
+        <span class="section-pill"><div class="dot"></div>tattoo-shop-little-italy</span>
+        <span class="section-pill"><div class="dot"></div>tattoo-shop-tribeca</span>
+        <span class="section-pill"><div class="dot"></div>tattoo-shop-chinatown</span>
+        <span class="section-pill"><div class="dot"></div>tattoo-shop-noho</span>
+        <span class="section-pill"><div class="dot"></div>tattoo-shop-greenwich-village</span>
+        <span class="section-pill"><div class="dot"></div>tattoo-shop-west-village</span>
+        <span class="section-pill"><div class="dot"></div>tattoo-shop-lower-east-side</span>
+        <span class="section-pill"><div class="dot"></div>tattoo-shop-east-village</span>
+        <span class="section-pill"><div class="dot"></div>tattoo-shop-hudson-square</span>
+        <span class="section-pill"><div class="dot"></div>tattoo-shop-dumbo-brooklyn</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ARTIST PAGES -->
+<div class="page-group">
+  <p class="page-group__title">Artist Pages (11)</p>
+  <div class="page-card">
+    <div class="page-card__header">
+      <div class="page-card__num">24+</div>
+      <div class="page-card__info"><h3>Individual Artist Pages</h3><p>/artists/junh | /artists/anastasia | /artists/julia | etc.</p></div>
+      <div class="page-card__status"><span class="badge badge--blue">Person Schema</span></div>
+    </div>
+    <div class="page-card__body">
+      <div class="step-col"><h4>Steps</h4><ul class="step-list">
+        <li><div class="n">1</div><div class="t">Create a page folder called "Artists" in Squarespace</div></li>
+        <li><div class="n">2</div><div class="t">Add one blank page per artist with URL slugs</div></li>
+        <li><div class="n">3</div><div class="t">Files are in <code>artists/</code> folder</div></li>
+        <li><div class="n">4</div><div class="t">Replace image placeholders with real artist portfolio photos from Adobe CC</div></li>
+      </ul></div>
+      <div class="sections-col"><h4>11 Artist Pages</h4>
+        <span class="section-pill"><div class="dot"></div>artists/junh</span>
+        <span class="section-pill"><div class="dot"></div>artists/anastasia</span>
+        <span class="section-pill"><div class="dot"></div>artists/julia</span>
+        <span class="section-pill"><div class="dot"></div>artists/kseniya</span>
+        <span class="section-pill"><div class="dot"></div>artists/val</span>
+        <span class="section-pill"><div class="dot"></div>artists/elzhana</span>
+        <span class="section-pill"><div class="dot"></div>artists/shannon</span>
+        <span class="section-pill"><div class="dot"></div>artists/alexzsunder</span>
+        <span class="section-pill"><div class="dot"></div>artists/drea</span>
+        <span class="section-pill"><div class="dot"></div>artists/alina</span>
+        <span class="section-pill"><div class="dot"></div>artists/loian</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
